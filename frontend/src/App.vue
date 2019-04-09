@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    
     <div>
 <navbar/>
 <router-view></router-view>
@@ -8,12 +9,12 @@
 </template>
 <script>
  import NavBar from './components/navbar/NavBar.vue'
- import Inicial from './view/Inicial.vue'
+ 
 export default {
   
   components:{
     'navbar' : NavBar,
-    'inicial' : Inicial
+    
   }
  
   
