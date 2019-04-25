@@ -86,22 +86,68 @@
           </v-data-table>
 
           <v-btn href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
+<v-content>
           <div class="grafico">
             
-              <v-tabs v-model="active" color="cyan" dark slider-color="yellow">
-                <v-tab v-for="n in 2" :key="n" ripple>Grafico {{ n }}</v-tab>
-                <v-tab-item v-for="n in 2" :key="n">
+              <v-tabs v-model="active" color="#00695c" dark slider-color="blue">
+                <v-tab ripple>Composição do rebanho médio (por cabecas) Percentual</v-tab>
+                <v-tab ripple>Composição do rebanho médio (por cabecas) Absoluto</v-tab>
+                <v-tab ripple>Composição (%) do rebanho médio (Por UA) Percentual</v-tab>
+                <v-tab ripple>Composição (%) do rebanho médio (Por UA) Absoluto</v-tab>
+                <v-tab ripple>Valor do rebanho médio por categoria animal (R$) Percentual</v-tab>
+                <v-tab ripple>Valor do rebanho médio por categoria animal (R$) Absoluto</v-tab>
+                <v-tab-item v-for="n in 6" :key="n">
                   <v-card flat>
-                    <pie-chart v-if="n==1" :data="chartData" :options="opt"></pie-chart>
+                    <pie-chart
+                      class="chart"
+                      v-if="n==1"
+                      :data="chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual"
+                      :options="opt"
+                      :styles="estilo"
+                    ></pie-chart>
 
-                    <pie-chart v-else :data="chartData1" :options="opt"></pie-chart>
+                    <pie-chart
+                      class="chart"
+                      v-else-if="n==2"
+                      :data="chartDataComposiçãoDoRebanhoMedioPorCabecasAbsoluto"
+                      :options="opt"
+                      :styles="estilo"
+                    ></pie-chart>
+
+                    <pie-chart
+                      class="chart"
+                      v-else-if="n==3"
+                      :data="chartData3"
+                      :options="opt"
+                      :styles="estilo"
+                    ></pie-chart>
+                    <pie-chart
+                      class="chart"
+                      v-else-if="n==4"
+                      :data="chartData4"
+                      :options="opt"
+                      :styles="estilo"
+                    ></pie-chart>
+                    <pie-chart
+                      class="chart"
+                      v-else-if="n==5"
+                      :data="chartData5"
+                      :options="opt"
+                      :styles="estilo"
+                    ></pie-chart>
+                    <pie-chart
+                      class="chart"
+                      v-else-if="n==6"
+                      :data="chartData6"
+                      :options="opt"
+                      :styles="estilo"
+                    ></pie-chart>
                   </v-card>
                 </v-tab-item>
               </v-tabs>
-
-              
-            </div>
-
+            
+          </div>
+          </v-content>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-content>
@@ -122,30 +168,23 @@ export default {
     resultadoCalculoReproducao: "",
     form: "",
     active: null,
-    chartData: {
-      labels: ["Green", "Red", "Blue"],
-      datasets: [
-        {
-          label: "Data One",
-          backgroundColor: ["#41B883", "#E46651", "#00D8FF"],
-          data: [1, 10, 5]
-        }
-      ]
-    },
-    chartData1: {
-      labels: ["Verde", "Nun sei", "Black"],
-      datasets: [
-        {
-          label: "Data One",
-          backgroundColor: ["#41B234", "#E46664", "#00D8GF"],
-          data: [1, 10, 5]
-        }
-      ]
-    },
+    //graficos
+    legenda: ["Green", "Red", "Blue"],
+    cores: ["#41B883", "#E46651", "#00D8FF"],
     opt: {
-      responsive: false,
-      maintainAspectRatio: false
+      responsive: true,
+      maintainAspectRatio: true
     },
+    estilo: {
+      height: "40%",
+      width: "40%"
+    },
+
+    dataComposiçãoDoRebanhoMedioPorCabecasPercentual: [1, 10, 5],
+    dataComposiçãoDoRebanhoMedioPorCabecasAbsoluto: [2, 5, 3],
+
+    
+
     headers: [
       {
         text: "Rebanho de Reprodução",
@@ -471,6 +510,36 @@ export default {
       this.active = active < 2 ? active + 1 : 0;
     }
   },
+
+  computed:{
+
+    chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual: function() {
+      return{
+      labels: this.legenda,
+      datasets: [
+        {
+          backgroundColor: this.cores,
+          data: this.dataComposiçãoDoRebanhoMedioPorCabecasPercentual
+        }
+      ]
+      }
+      
+    },
+
+    chartDataComposiçãoDoRebanhoMedioPorCabecasAbsoluto: function() {
+      return{
+labels: this.legenda,
+      datasets: [
+        {
+          backgroundColor: this.cores,
+          data: this.dataComposiçãoDoRebanhoMedioPorCabecasAbsoluto
+        }
+      ]
+      }
+      
+    },
+
+  },
   beforeCreate() {
     var db = new Dexie("simulacao");
     db.version(1).stores({
@@ -586,6 +655,15 @@ export default {
   h2 {
     color: #00695c;
   }
+  .grafico {
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 3%;
+  }
+  .chart {
+    margin-top: 3%;
+  }
   .container {
     position: absolute;
     padding: 1%;
@@ -600,8 +678,8 @@ export default {
   }
 
   .panel {
-    margin-top: 1%;
-    padding-bottom: 1%;
+    margin-top: 3%;
+    padding-bottom: 3%;
     background-color: white;
     box-shadow: 0 4px 15px black;
   }
@@ -641,10 +719,15 @@ export default {
   h2 {
     color: #00695c;
   }
+
+  .chart {
+    margin-top: 3%;
+  }
+
   .grafico {
     margin-top: 10%;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
     margin-bottom: 5%;
   }
   .container {

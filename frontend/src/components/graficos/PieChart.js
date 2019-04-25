@@ -1,10 +1,10 @@
 import { Pie} from "vue-chartjs";
 export default {
   extends: Pie,
-  props: ["data", "options"],
+  props: ["data", "options", "styles"],
   mounted() {
     // this.chartData is created in the mixin.
     // If you want to pass options please create a local options object
-    this.renderChart(this.data, this.options);
+    this.renderChart(this.data, this.options, this.styles);
   }
 };
