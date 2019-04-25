@@ -6,162 +6,102 @@
       <v-expansion-panel v-model="panel[0]" expand class="panel">
         <v-expansion-panel-content>
           <template v-slot:header>
-            <h2>Dados Gerais do Rebanho</h2>
+            <h2>Dados Gerais do Rebanho de Reprodução</h2>
           </template>
-
-          <div class="divider">
-            <span>
-              <b>Rebanho de Reprodução</b>
-            </span>
-          </div>
-          <v-divider></v-divider>
 
           <v-data-table hide-actions :headers="headers" :items="desserts" class="elevation-1">
             <template v-slot:items="props">
               <td>{{ props.item.name }}</td>
               <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoInicial }}</td>
-              
+              <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoFinal }}</td>
               <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoInicial }}</td>
-              
-              
-            </template>
-          </v-data-table>
-
-
-           <v-data-table hide-actions :headers="headers1" :items="desserts1" class="elevation-1">
-            <template v-slot:items="props1">
-              <td>{{ props1.item.name }}</td>
-            
-              <td class="text-xs-center">{{ props1.item.rebanhoReproducaoPesoVivoFinal }}</td>
-              <td class="text-xs-center">{{ props1.item.rebanhoReproducaoValorEstoqueGadoFinal }}</td>
-              
+              <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoFinal }}</td>
             </template>
           </v-data-table>
 
           <v-data-table hide-actions :headers="headers5" :items="desserts5" class="elevation-1">
             <template v-slot:items="props5">
               <td>{{ props5.item.name }}</td>
-            
+
               <td class="text-xs-center">{{ props5.item.rebanhoReproducaoCabecasInicial }}</td>
               <td class="text-xs-center">{{ props5.item.rebanhoReproducaoCabecasFinal }}</td>
-              
             </template>
           </v-data-table>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
 
-          <div class="divider">
-            <span>
-              <b>Rebanho de Recria/Engorda</b>
-            </span>
-          </div>
-          <v-divider></v-divider>
-
-
+      <v-expansion-panel v-model="panel[1]" expand class="panel">
+        <v-expansion-panel-content>
+          <template v-slot:header>
+            <h2>Dados Gerais do Rebanho de Recria/Engorda</h2>
+          </template>
 
           <v-data-table hide-actions :headers="headers2" :items="desserts2" class="elevation-1">
             <template v-slot:items="props2">
               <td>{{ props2.item.name }}</td>
               <td class="text-xs-center">{{ props2.item.rebanhoRecriaPesoPorCabecaMedia }}</td>
-              
-              
-              
-              
-            </template>
-          </v-data-table>
-
-
-          <v-data-table hide-actions :headers="headers3" :items="desserts3" class="elevation-1">
-            <template v-slot:items="props3">
-              <td>{{ props3.item.name }}</td>
-            
-              <td class="text-xs-center">{{ props3.item.rebanhoRecriaPesoVivoInicial }}</td>
-              <td class="text-xs-center">{{ props3.item.rebanhoRecriaValorEstoqueGadoInicial }}</td>
-              
-            </template>
-          </v-data-table>
-
-
-
-          <v-data-table hide-actions :headers="headers4" :items="desserts4" class="elevation-1">
-            <template v-slot:items="props4">
-              <td>{{ props4.item.name }}</td>
-            
-              <td class="text-xs-center">{{ props4.item.rebanhoRecriaPesoVivoFinal }}</td>
-              <td class="text-xs-center">{{ props4.item.rebanhoRecriaValorEstoqueGadoFinal }}</td>
-              
+              <td class="text-xs-center">{{ props2.item.rebanhoRecriaPesoVivoInicial }}</td>
+              <td class="text-xs-center">{{ props2.item.rebanhoRecriaPesoVivoFinal }}</td>
+              <td class="text-xs-center">{{ props2.item.rebanhoRecriaValorEstoqueGadoInicial }}</td>
+              <td class="text-xs-center">{{ props2.item.rebanhoRecriaValorEstoqueGadoFinal }}</td>
             </template>
           </v-data-table>
 
           <v-data-table hide-actions :headers="headers6" :items="desserts6" class="elevation-1">
             <template v-slot:items="props6">
               <td>{{ props6.item.name }}</td>
-            
+
               <td class="text-xs-center">{{ props6.item.rebanhoRecriaCabecasInicial }}</td>
               <td class="text-xs-center">{{ props6.item.rebanhoRecriaCabecasFinal }}</td>
-              
             </template>
           </v-data-table>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
 
-
-
-          <div class="divider">
-            <span>
-              <b>Rebanho Total</b>
-            </span>
-          </div>
-          <v-divider></v-divider>
-
-
+      <v-expansion-panel v-model="panel[2]" expand class="panel">
+        <v-expansion-panel-content>
+          <template v-slot:header>
+            <h2>Dados Gerais do Rebanho Total</h2>
+          </template>
 
           <v-data-table hide-actions :headers="headers7" :items="desserts7" class="elevation-1">
             <template v-slot:items="props7">
               <td>{{ props7.item.name }}</td>
-            
-              
+              <td class="text-xs-center">{{ props7.item.rebanhoTotalCabecasInicial }}</td>
               <td class="text-xs-center">{{ props7.item.rebanhoTotalCabecasFinal }}</td>
-              
+              <td class="text-xs-center">{{ props7.item.rebanhoTotalPesoVivoInicial }}</td>
+              <td class="text-xs-center">{{ props7.item.rebanhoTotalPesoVivoFinal }}</td>
+              <td class="text-xs-center">{{ props7.item.rebanhoTotalValorEstoqueGadoInicial }}</td>
+              <td class="text-xs-center">{{ props7.item.rebanhoTotalValorEstoqueGadoFinal }}</td>
             </template>
           </v-data-table>
-
-          <v-data-table hide-actions :headers="headers8" :items="desserts8" class="elevation-1">
-            <template v-slot:items="props8">
-              <td>{{ props8.item.name }}</td>
-              <td class="text-xs-center">{{ props8.item.rebanhoTotalPesoVivoInicial }}</td>
-              
-              <td class="text-xs-center">{{ props8.item.rebanhoTotalValorEstoqueGadoInicial }}</td>
-              
-              
-            </template>
-          </v-data-table>
-
-          <v-data-table hide-actions :headers="headers9" :items="desserts9" class="elevation-1">
-            <template v-slot:items="props9">
-              <td>{{ props9.item.name }}</td>
-              <td class="text-xs-center">{{ props9.item.rebanhoTotalPesoVivoFinal }}</td>
-              
-              <td class="text-xs-center">{{ props9.item.rebanhoTotalValorEstoqueGadoFinal }}</td>
-              
-              
-            </template>
-          </v-data-table>
-
 
           <v-data-table hide-actions :headers="headers10" :items="desserts10" class="elevation-1">
             <template v-slot:items="props10">
               <td>{{ props10.item.name }}</td>
               <td class="text-xs-center">{{ props10.item.totalRebanhoMedioCabecas }}</td>
-              
+
               <td class="text-xs-center">{{ props10.item.totalRebanhoMedioUA }}</td>
-              
-              
             </template>
           </v-data-table>
 
+          <v-btn href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
+          <div class="grafico">
+            
+              <v-tabs v-model="active" color="cyan" dark slider-color="yellow">
+                <v-tab v-for="n in 2" :key="n" ripple>Grafico {{ n }}</v-tab>
+                <v-tab-item v-for="n in 2" :key="n">
+                  <v-card flat>
+                    <pie-chart v-if="n==1" :data="chartData" :options="opt"></pie-chart>
 
+                    <pie-chart v-else :data="chartData1" :options="opt"></pie-chart>
+                  </v-card>
+                </v-tab-item>
+              </v-tabs>
 
-          <v-btn href="/#/"
-                class="button"
-                color="success"
-              >Visualizar Formulário ! </v-btn>
+              
+            </div>
+
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-content>
@@ -169,492 +109,369 @@
 </template>
 <script>
 import Formulario from "../class/Formulario.js";
+import BibliotecaDeCalculos from "bibliotecadecalculos";
+import PieChart from "../components/graficos/PieChart.js";
+
 export default {
+  components: {
+    PieChart
+  },
   data: () => ({
-    formulario: new Formulario(),
-    panel: [0, 0],
+    formulario: "",
+    panel: [0, 0, 0],
+    resultadoCalculoReproducao: "",
+    form: "",
+    active: null,
+    chartData: {
+      labels: ["Green", "Red", "Blue"],
+      datasets: [
+        {
+          label: "Data One",
+          backgroundColor: ["#41B883", "#E46651", "#00D8FF"],
+          data: [1, 10, 5]
+        }
+      ]
+    },
+    chartData1: {
+      labels: ["Verde", "Nun sei", "Black"],
+      datasets: [
+        {
+          label: "Data One",
+          backgroundColor: ["#41B234", "#E46664", "#00D8GF"],
+          data: [1, 10, 5]
+        }
+      ]
+    },
+    opt: {
+      responsive: false,
+      maintainAspectRatio: false
+    },
     headers: [
-          {
-            text: 'Rebanho de Reprodução',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'Peso vivo total do rebanho(kg) Inicial', value: 'rebanhoReproducaoPesoVivoInicial' ,align:'center',},
-          
-          { text: 'Valor estoque gado (R$) Inicial', value: 'rebanhoReproducaoValorEstoqueGadoInicial' ,align:'center'},
-          
-        ],
-        desserts: [
-          {
-            
-            name: 'Touros',
-            rebanhoReproducaoPesoVivoInicial: 159,
-            
-            rebanhoReproducaoValorEstoqueGadoInicial: 24,
-            
-            
-          },
-          {
-            name: 'Vacas (Matrizes)',
-            rebanhoReproducaoPesoVivoInicial: 237,
-            
-            rebanhoReproducaoValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          
-          
-        ],
+      {
+        text: "Rebanho de Reprodução",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
 
+      {
+        text: "Peso vivo total do rebanho(kg) Inicial",
+        value: "rebanhoReproducaoPesoVivoInicial",
+        align: "left"
+      },
+      {
+        text: "Peso vivo total do rebanho(kg) Final",
+        value: "rebanhoReproducaoPesoVivoFinal",
+        align: "left"
+      },
 
+      {
+        text: "Valor estoque gado (R$) Inicial",
+        value: "rebanhoReproducaoValorEstoqueGadoInicial",
+        align: "left"
+      },
+      {
+        text: "Valor estoque gado(R$) Final",
+        value: "rebanhoReproducaoValorEstoqueGadoFinal",
+        align: "left"
+      }
+    ],
+    desserts: [
+      {
+        name: "Touros",
+        rebanhoReproducaoPesoVivoInicial: "erro",
+        rebanhoReproducaoPesoVivoFinal: "erro",
+        rebanhoReproducaoValorEstoqueGadoInicial: "erro",
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Vacas (Matrizes)",
+        rebanhoReproducaoPesoVivoInicial: "erro",
+        rebanhoReproducaoPesoVivoFinal: "erro",
+        rebanhoReproducaoValorEstoqueGadoInicial: "erro",
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "SUBTOTAL",
 
-        headers1: [
-          {
-            text: 'Rebanho de Reprodução',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          
-          { text: 'Peso vivo total do rebanho(kg) Final', value: 'rebanhoReproducaoPesoVivoFinal' ,align:'center'},
-         
-          { text: 'Valor estoque gado(R$) Final', value: 'rebanhoReproducaoValorEstoqueGadoFinal',align:'center' },
-          
-        ],
-        desserts1: [
-          {
-            name: 'Touros',
-            
-            rebanhoReproducaoPesoVivoFinal: 6.0,
-            
-            rebanhoReproducaoValorEstoqueGadoFinal: 4.0,
-            
-          },
-          {
-            name: 'Vacas (Matrizes)',
-            
-            rebanhoReproducaoPesoVivoFinal: 9.0,
-            
-            rebanhoReproducaoValorEstoqueGadoFinal: 4.3,
-            
-          },
-          {
-            name: 'Diferença no Estoque e Valor Do Gado de Cria (final-inicial)',
-            
-            rebanhoReproducaoPesoVivoFinal: 16.0,
-            
-            rebanhoReproducaoValorEstoqueGadoFinal: 6.0,
-            
-          },
-          
-        ],
-        headers5: [
-          {
-            text: 'Rebanho de Reprodução',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          
-          { text: 'Cabeças Inicial', value: 'rebanhoReproducaoCabecasInicial' ,align:'center'},
-         
-          { text: 'Cabeças Final', value: 'rebanhoReproducaoCabecasFinal',align:'center' },
-          
-        ],
-        desserts5: [
-          {
-            name: 'SUBTOTAL',
-            
-            rebanhoReproducaoCabecasInicial: 6.0,
-            
-            rebanhoReproducaoCabecasFinal: 4.0,
-            
-          },
-        ],
+        rebanhoReproducaoPesoVivoInicial: "erro",
+        rebanhoReproducaoPesoVivoFinal: "erro",
+        rebanhoReproducaoValorEstoqueGadoInicial: "erro",
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      },
 
-        headers2: [
-          {
-            text: 'Rebanho de Recria/Engorda',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'Peso por cabeça(kg) Média', value: 'rebanhoRecriaPesoPorCabecaMedia' ,align:'center',},
-          
-          
-          
-        ],
-        desserts2: [
-          {
-            
-            name: 'Fêmeas + 36 meses',
-            rebanhoRecriaPesoPorCabecaMedia: 159,
-            
-            
-          },
-          {
-            name: 'Fêmeas 24-36 meses',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-            
-            
-          },
-          {
-            name: 'Fêmeas 12-24 meses ',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-           
-            
-          },
-          {
-            name: 'Fêmeas 0-12 meses',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-           
-            
-          },
-          {
-            name: 'Machos 0-12 meses',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-            
-            
-          },
-          {
-            name: 'Machos 12-24 meses ',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-            
-            
-          },
-          {
-            name: 'Machos 24-36 meses',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-           
-            
-          },
-          {
-            name: 'Machos + 36 meses inclusive tourunos ',
-            rebanhoRecriaPesoPorCabecaMedia: 237,
-            
-            
-          },
-          
-          
-        ],
-        headers3: [
-          {
-            text: 'Rebanho de Recria/Engorda',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'Peso vivo total do rebanho(kg) Inicial', value: 'rebanhoRecriaPesoVivoInicial' ,align:'center',},
-          
-          { text: 'Valor estoque gado (R$) Inicial', value: 'rebanhoRecriaValorEstoqueGadoInicial' ,align:'center'},
-          
-        ],
-        desserts3: [
-          {
-            
-            name: 'Fêmeas + 36 meses',
-            rebanhoRecriaPesoVivoInicial: 159,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 24,
-            
-            
-          },
-          {
-            name: 'Fêmeas 24-36 meses',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          {
-            name: 'Fêmeas 12-24 meses',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          {
-            name: 'Machos 0-12 meses',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          {
-            name: 'Machos 12-24 meses',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          {
-            name: 'Machos 24-36 meses',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          {
-            name: 'Machos + 36 meses inclusive tourunos',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          {
-            name: 'SUBTOTAL',
-            rebanhoRecriaPesoVivoInicial: 237,
-            
-            rebanhoRecriaValorEstoqueGadoInicial: 37,
-            
-            
-          },
-          
-          
-          
-        ],
+      {
+        name: "Diferença no Estoque e Valor Do Gado de Cria (final-inicial)",
 
+        rebanhoReproducaoPesoVivoFinal: "erro",
 
-        headers4: [
-          {
-            text: 'Rebanho de Recria/Engorda',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'Peso vivo total do rebanho(kg) Final', value: 'rebanhoRecriaPesoVivoFinal' ,align:'center',},
-          
-          { text: 'Valor estoque gado (R$) Final', value: 'rebanhoRecriaValorEstoqueGadoFinal' ,align:'center'},
-          
-        ],
-        desserts4: [
-          {
-            
-            name: 'Fêmeas + 36 meses',
-            rebanhoRecriaPesoVivoFinal: 159,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 24,
-            
-            
-          },
-          {
-            name: 'Fêmeas 24-36 meses',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'Fêmeas 12-24 meses',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'Machos 0-12 meses',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'Machos 12-24 meses',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'Machos 24-36 meses',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'Machos + 36 meses inclusive tourunos',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'SUBTOTAL',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-          {
-            name: 'Diferença no Estoque e Valor do Gado de Recria/Engorda(final-inicial)',
-            rebanhoRecriaPesoVivoFinal: 237,
-            
-            rebanhoRecriaValorEstoqueGadoFinal: 37,
-            
-            
-          },
-        ],
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      }
+    ],
 
-        headers6: [
-          {
-            text: 'Rebanho de Recria/ Engorda',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          
-          { text: 'Cabeças Inicial', value: 'rebanhoRecriaCabecasInicial' ,align:'center'},
-         
-          { text: 'Cabeças Final', value: 'rebanhoRecriaCabecasFinal',align:'center' },
-          
-        ],
-        desserts6: [
-          {
-            name: 'SUBTOTAL',
-            
-            rebanhoRecriaCabecasInicial: 6.0,
-            
-            rebanhoRecriaCabecasFinal: 4.0,
-            
-          },
-        ],
+    headers5: [
+      {
+        text: "Rebanho de Reprodução",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
 
-        headers7: [
-          {
-            text: 'Rebanho Total',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          
-         
-          { text: 'Cabeças Final', value: 'rebanhoTotalCabecasFinal',align:'center' },
-          
-        ],
-        desserts7: [
-          {
-            name: 'TOTAL',
-            
-            
-            
-            rebanhoTotalCabecasFinal: 4.0,
-            
-          },
-          {
-            name: 'Diferença no Estoque Total de Gado(Final-Inicial)',
-            
-            
-            
-            rebanhoTotalCabecasFinal: 4.0,
-            
-          },
-        ],
+      {
+        text: "Cabeças Inicial",
+        value: "rebanhoReproducaoCabecasInicial",
+        align: "center"
+      },
 
-        headers8: [
-          {
-            text: 'Rebanho Total',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'Peso vivo total do rebanho(kg) Inicial', value: 'rebanhoTotalPesoVivoInicial' ,align:'center',},
-          
-          { text: 'Valor estoque gado (R$) Inicial', value: 'rebanhoTotalValorEstoqueGadoInicial' ,align:'center'},
-          
-        ],
-        desserts8: [
-          {
-            
-            name: 'TOTAL',
-            rebanhoTotalPesoVivoInicial: 159,
-            
-            rebanhoTotalValorEstoqueGadoInicial: 24,
-            
-            
-          },
-          
-          
-          
-        ],
+      {
+        text: "Cabeças Final",
+        value: "rebanhoReproducaoCabecasFinal",
+        align: "center"
+      }
+    ],
+    desserts5: [
+      {
+        name: "SUBTOTAL",
 
+        rebanhoReproducaoCabecasInicial: "erro",
 
+        rebanhoReproducaoCabecasFinal: "erro"
+      }
+    ],
 
-         headers9: [
-          {
-            text: 'Rebanho Total',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'Peso vivo total do rebanho(kg) Final', value: 'rebanhoTotalPesoVivoFinal' ,align:'center',},
-          
-          { text: 'Valor estoque gado (R$) Final', value: 'rebanhoTotalValorEstoqueGadoFinal' ,align:'center'},
-          
-        ],
-        desserts9: [
-          {
-            
-            name: 'TOTAL',
-            rebanhoTotalPesoVivoFinal: 159,
-            
-            rebanhoTotalValorEstoqueGadoFinal: 24,
-            
-            
-          },
-          {
-            
-            name: 'Diferença no Estoque Total de Gado(Final-Inicial)',
-            rebanhoTotalPesoVivoFinal: 159,
-            
-            rebanhoTotalValorEstoqueGadoFinal: 24,
-            
-            
-          },
-        ],
+    headers2: [
+      {
+        text: "Rebanho de Recria/Engorda",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
+      {
+        text: "Peso por cabeça(kg) Média",
+        value: "rebanhoRecriaPesoPorCabecaMedia",
+        align: "center"
+      },
+      {
+        text: "Peso vivo total do rebanho(kg) Inicial",
+        value: "rebanhoRecriaPesoVivoInicial",
+        align: "center"
+      },
+      {
+        text: "Peso vivo total do rebanho(kg) Final",
+        value: "rebanhoRecriaPesoVivoFinal",
+        align: "center"
+      },
 
-        headers10: [
-          {
-            text: 'Rebanho Total',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-          },
-          { text: 'TOTAL DO REBANHO (MÉDIO) EM CABEÇAS', value: 'totalRebanhoMedioCabecas' ,align:'center',},
-          
-          { text: 'TOTAL DO REBANHO (MÉDIO) EM UA', value: 'totalRebanhoMedioUA' ,align:'center'},
-          
-        ],
-        desserts10: [
-          {
-            
-            name: '',
-            
-            
-            totalRebanhoMedioCabecas: 159,
-            
-            totalRebanhoMedioUA: 24,
-            
-            
-          },
-        ],
+      {
+        text: "Valor estoque gado (R$) Inicial",
+        value: "rebanhoRecriaValorEstoqueGadoInicial",
+        align: "center"
+      },
+
+      {
+        text: "Valor estoque gado (R$) Final",
+        value: "rebanhoRecriaValorEstoqueGadoFinal",
+        align: "center"
+      }
+    ],
+    desserts2: [
+      {
+        name: "Fêmeas + 36 meses",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Fêmeas 24-36 meses",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Fêmeas 12-24 meses ",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Fêmeas 0-12 meses",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Machos 0-12 meses",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Machos 12-24 meses ",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Machos 24-36 meses",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Machos + 36 meses inclusive tourunos ",
+        rebanhoRecriaPesoPorCabecaMedia: "erro",
+        rebanhoRecriaPesoVivoInicial: "erro",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoInicial: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Diferença",
+        rebanhoRecriaPesoVivoFinal: "erro",
+        rebanhoRecriaValorEstoqueGadoFinal: "erro"
+      }
+    ],
+
+    headers6: [
+      {
+        text: "Rebanho de Recria/ Engorda",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
+
+      {
+        text: "Cabeças Inicial",
+        value: "rebanhoRecriaCabecasInicial",
+        align: "center"
+      },
+
+      {
+        text: "Cabeças Final",
+        value: "rebanhoRecriaCabecasFinal",
+        align: "center"
+      }
+    ],
+    desserts6: [
+      {
+        name: "SUBTOTAL",
+
+        rebanhoRecriaCabecasInicial: "erro",
+
+        rebanhoRecriaCabecasFinal: "erro"
+      }
+    ],
+
+    headers7: [
+      {
+        text: "Rebanho Total",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
+      {
+        text: "Cabeças Inicial",
+        value: "rebanhoTotalCabecasInicial",
+        align: "center"
+      },
+
+      {
+        text: "Cabeças Final",
+        value: "rebanhoTotalCabecasFinal",
+        align: "center"
+      },
+      {
+        text: "Peso vivo total do rebanho(kg) Inicial",
+        value: "rebanhoTotalPesoVivoInicial",
+        align: "center"
+      },
+      {
+        text: "Peso vivo total do rebanho(kg) Final",
+        value: "rebanhoTotalPesoVivoFinal",
+        align: "center"
+      },
+
+      {
+        text: "Valor estoque gado (R$) Inicial",
+        value: "rebanhoTotalValorEstoqueGadoInicial",
+        align: "center"
+      },
+
+      {
+        text: "Valor estoque gado (R$) Final",
+        value: "rebanhoTotalValorEstoqueGadoFinal",
+        align: "center"
+      }
+    ],
+    desserts7: [
+      {
+        name: "TOTAL",
+        rebanhoTotalCabecasInicial: "erro",
+        rebanhoTotalCabecasFinal: "erro",
+        rebanhoTotalPesoVivoInicial: "erro",
+        rebanhoTotalPesoVivoFinal: "erro",
+        rebanhoTotalValorEstoqueGadoInicial: "erro",
+        rebanhoTotalValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Diferença no Estoque Total de Gado(Final-Inicial)",
+
+        rebanhoTotalCabecasFinal: "erro",
+        rebanhoTotalPesoVivoFinal: "erro",
+        rebanhoTotalValorEstoqueGadoFinal: "erro"
+      }
+    ],
+
+    headers10: [
+      {
+        text: "Rebanho Total",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
+      {
+        text: "TOTAL DO REBANHO (MÉDIO) EM CABEÇAS",
+        value: "totalRebanhoMedioCabecas",
+        align: "center"
+      },
+
+      {
+        text: "TOTAL DO REBANHO (MÉDIO) EM UA",
+        value: "totalRebanhoMedioUA",
+        align: "center"
+      }
+    ],
+    desserts10: [
+      {
+        name: "",
+
+        totalRebanhoMedioCabecas: "erro",
+
+        totalRebanhoMedioUA: "erro"
+      }
+    ]
   }),
-
-  created() {
+  methods: {
+    next() {
+      const active = parseInt(this.active);
+      this.active = active < 2 ? active + 1 : 0;
+    }
+  },
+  beforeCreate() {
     var db = new Dexie("simulacao");
     db.version(1).stores({
       simulacao: "id,formularioDB"
@@ -662,31 +479,133 @@ export default {
 
     db.simulacao
       .get(1)
-      .then(f => (this.formulario = new Formulario(f.formularioDB)));
+      .then(f => (this.formulario = new Formulario(f.formularioDB)))
+      .then(function(form) {
+        console.log(form);
+        console.log(form.RebanhoDeRecria);
+
+        var bibliotecas = [
+          BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
+
+          BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria),
+
+          BibliotecaDeCalculos.RebanhoTotal(
+            BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
+            BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria)
+          )
+        ];
+
+        return bibliotecas;
+      })
+      .then(
+        g => (
+          //reprodução
+
+          (this.desserts[0].rebanhoReproducaoPesoVivoInicial = g[0].pesoVivoTotalDoRebanhoInicialTouro()),
+          (this.desserts[0].rebanhoReproducaoValorEstoqueGadoInicial = g[0].valorEstoqueInicialTouro()),
+          (this.desserts[1].rebanhoReproducaoPesoVivoInicial = g[0].pesoVivoTotalDoRebanhoInicialVaca()),
+          (this.desserts[1].rebanhoReproducaoValorEstoqueGadoInicial = g[0].valorEstoqueInicialVaca()),
+          (this.desserts[2].rebanhoReproducaoPesoVivoInicial = g[0].subtotalDoPesoVivoTotalInicial()),
+          (this.desserts[2].rebanhoReproducaoValorEstoqueGadoInicial = g[0].subtotalDoValorDoEstoqueInicial()),
+          (this.desserts[0].rebanhoReproducaoPesoVivoFinal = g[0].pesoVivoTotalDoRebanhoFinalTouro()),
+          (this.desserts[0].rebanhoReproducaoValorEstoqueGadoFinal = g[0].valorEstoqueFinalTouro()),
+          (this.desserts[1].rebanhoReproducaoPesoVivoFinal = g[0].pesoVivoTotalDoRebanhoFinalVaca()),
+          (this.desserts[1].rebanhoReproducaoValorEstoqueGadoFinal = g[0].valorEstoqueFinalVaca()),
+          (this.desserts[2].rebanhoReproducaoPesoVivoFinal = g[0].diferencaDePesoNoEstoque()),
+          (this.desserts[2].rebanhoReproducaoValorEstoqueGadoFinal = g[0].diferencaNoValorDoEstoque()),
+          (this.desserts[3].rebanhoReproducaoPesoVivoFinal = g[0].subtotalDoPesoVivoTotalFinal()),
+          (this.desserts[3].rebanhoReproducaoValorEstoqueGadoFinal = g[0].subtotalDoValorDoEstoqueFinal()),
+          (this.desserts5[0].rebanhoReproducaoCabecasInicial = g[0].subtotalDeCabecasInicial()),
+          (this.desserts5[0].rebanhoReproducaoCabecasFinal = g[0].subtotalDeCabecasFinal()),
+          //recria/ engorda
+
+          (this.desserts2[0].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoFemeas36()),
+          (this.desserts2[0].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialFemeas36()),
+          (this.desserts2[0].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalFemeas36()),
+          (this.desserts2[0].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueFemeas36()),
+          (this.desserts2[0].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueFemeas36()),
+          (this.desserts2[1].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoFemeas2436()),
+          (this.desserts2[1].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialFemeas2436()),
+          (this.desserts2[1].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalFemeas2436()),
+          (this.desserts2[1].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueFemeas2436()),
+          (this.desserts2[1].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueFemeas2436()),
+          (this.desserts2[2].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoFemeas1224()),
+          (this.desserts2[2].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialFemeas1224()),
+          (this.desserts2[2].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueFemeas1224()),
+          (this.desserts2[2].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueFemeas1224()),
+          (this.desserts2[2].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalFemeas1224()),
+          (this.desserts2[3].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoFemeas012()),
+          (this.desserts2[3].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialFemeas012()),
+          (this.desserts2[3].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalFemeas012()),
+          (this.desserts2[3].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueFemeas012()),
+          (this.desserts2[3].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueFemeas012()),
+          (this.desserts2[4].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoMachos012()),
+          (this.desserts2[4].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialMachos012()),
+          (this.desserts2[4].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueMachos012()),
+          (this.desserts2[4].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueMachos012()),
+          (this.desserts2[4].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalMachos012()),
+          (this.desserts2[5].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoMachos1224()),
+          (this.desserts2[5].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialMachos1224()),
+          (this.desserts2[5].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalMachos1224()),
+          (this.desserts2[5].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueMachos1224()),
+          (this.desserts2[5].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueMachos1224()),
+          (this.desserts2[6].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoMachos2436()),
+          (this.desserts2[6].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialMachos2436()),
+          (this.desserts2[6].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalMachos2436()),
+          (this.desserts2[6].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueMachos2436()),
+          (this.desserts2[6].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueMachos2436()),
+          (this.desserts2[7].rebanhoRecriaPesoPorCabecaMedia = g[1].calculaMediaPesoMachos36()),
+          (this.desserts2[7].rebanhoRecriaPesoVivoInicial = g[1].calculaPesoTotaldoRebanhoInicialMachos36()),
+          (this.desserts2[7].rebanhoRecriaPesoVivoFinal = g[1].calculaPesoTotaldoRebanhoFinalMachos36()),
+          (this.desserts2[7].rebanhoRecriaValorEstoqueGadoInicial = g[1].calculaValorInicialEstoqueMachos36()),
+          (this.desserts2[7].rebanhoRecriaValorEstoqueGadoFinal = g[1].calculaValorFinalEstoqueMachos36()),
+          (this.desserts2[8].rebanhoRecriaPesoVivoFinal = g[1].diferencaDePesoNoEstoque()),
+          (this.desserts2[8].rebanhoRecriaValorEstoqueGadoFinal = g[1].diferencaNoValorDoEstoque()),
+          (this.desserts6[0].rebanhoRecriaCabecasInicial = g[1].subtotalDeCabecasInicial()),
+          (this.desserts6[0].rebanhoRecriaCabecasFinal = g[1].subtotalDeCabecasFinal()),
+          //rebanho Total
+
+          (this.desserts7[0].rebanhoTotalCabecasInicial = g[2].totalCabecaInicial()),
+          (this.desserts7[0].rebanhoTotalCabecasFinal = g[2].totalCabecaFinal()),
+          (this.desserts7[0].rebanhoTotalPesoVivoInicial = g[2].totalPesoVivoInicialDoRebanho()),
+          (this.desserts7[0].rebanhoTotalPesoVivoFinal = g[2].totalPesoVivoFinalDoRebanho()),
+          (this.desserts7[0].rebanhoTotalValorEstoqueGadoInicial = g[2].totalValorEstoqueInicial()),
+          (this.desserts7[0].rebanhoTotalValorEstoqueGadoFinal = g[2].totalValorEstoqueFinal()),
+          (this.desserts7[1].rebanhoTotalCabecasFinal = g[2].diferencaDeCabecasEstoqueTotal()),
+          (this.desserts7[1].rebanhoTotalPesoVivoFinal = g[2].diferencaPesovivoTotal()),
+          (this.desserts7[1].rebanhoTotalValorEstoqueGadoFinal = g[2].diferencaValorTotal()),
+          (this.desserts10[0].totalRebanhoMedioCabecas = g[2].rebanhoTotalMedia()),
+          (this.desserts10[0].totalRebanhoMedioUA = g[2].calculaRebanhoTotalUA())
+        )
+      );
   }
 };
 </script>
 <style scoped>
 @media screen and (max-width: 991px) {
+  h2 {
+    color: #00695c;
+  }
   .container {
     position: absolute;
     padding: 1%;
-    
+
     text-align: center;
 
     background-color: #00695c;
-    min-height: 100%;
+    min-height: 100vh;
     max-width: none;
 
     color: azure;
   }
 
   .panel {
+    margin-top: 1%;
+    padding-bottom: 1%;
+    background-color: white;
     box-shadow: 0 4px 15px black;
-    max-width: none;
   }
-  
-  
+
   .button {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -704,42 +623,58 @@ export default {
     font-size: 110%;
   }
 
-
-  .elevation-1{
+  .elevation-1 {
     margin-top: 3%;
-    
+    border: solid;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-width: 1px;
+    border-color: #004f48;
+  }
+
+  .v-datatable {
+    max-width: 90%;
   }
 }
 
 @media screen and (min-width: 992px) {
+  h2 {
+    color: #00695c;
+  }
+  .grafico {
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 5%;
+  }
   .container {
-    
     margin-top: 2%;
     position: absolute;
     text-align: center;
 
     background-color: #00695c;
-    min-height: 100%;
+    min-height: 100vh;
     max-width: none;
 
     color: azure;
-  
   }
-  
+
   h1 {
     font-size: 250%;
   }
 
   .panel {
+    margin-top: 2%;
+    padding-bottom: 1%;
+    background-color: white;
     box-shadow: 0 4px 10px black;
-   
   }
-  
-  
+
   .button {
     margin-top: 2%;
     margin-bottom: 2%;
     float: right;
+    margin-right: 2%;
   }
 
   .divider {
@@ -756,16 +691,14 @@ export default {
   .layout {
     margin-left: 5%;
   }
-  .elevation-1{
+  .elevation-1 {
     margin-top: 3%;
-    border:solid;
+    border: solid;
     margin-left: 2%;
     margin-right: 2%;
     border-width: 1px;
-    
-    
-    border-color: #004F48;
-    
+
+    border-color: #004f48;
   }
 }
 </style>
