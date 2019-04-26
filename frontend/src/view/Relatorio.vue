@@ -86,68 +86,18 @@
           </v-data-table>
 
           <v-btn href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
-<v-content>
-          <div class="grafico">
-            
-              <v-tabs v-model="active" color="#00695c" dark slider-color="blue">
-                <v-tab ripple>Composição do rebanho médio (por cabecas) Percentual</v-tab>
-                <v-tab ripple>Composição do rebanho médio (por cabecas) Absoluto</v-tab>
-                <v-tab ripple>Composição (%) do rebanho médio (Por UA) Percentual</v-tab>
-                <v-tab ripple>Composição (%) do rebanho médio (Por UA) Absoluto</v-tab>
-                <v-tab ripple>Valor do rebanho médio por categoria animal (R$) Percentual</v-tab>
-                <v-tab ripple>Valor do rebanho médio por categoria animal (R$) Absoluto</v-tab>
-                <v-tab-item v-for="n in 6" :key="n">
-                  <v-card flat>
-                    <pie-chart
-                      class="chart"
-                      v-if="n==1"
-                      :data="chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual"
-                      :options="opt"
-                      :styles="estilo"
-                    ></pie-chart>
 
-                    <pie-chart
-                      class="chart"
-                      v-else-if="n==2"
-                      :data="chartDataComposiçãoDoRebanhoMedioPorCabecasAbsoluto"
-                      :options="opt"
-                      :styles="estilo"
-                    ></pie-chart>
-
-                    <pie-chart
-                      class="chart"
-                      v-else-if="n==3"
-                      :data="chartData3"
-                      :options="opt"
-                      :styles="estilo"
-                    ></pie-chart>
-                    <pie-chart
-                      class="chart"
-                      v-else-if="n==4"
-                      :data="chartData4"
-                      :options="opt"
-                      :styles="estilo"
-                    ></pie-chart>
-                    <pie-chart
-                      class="chart"
-                      v-else-if="n==5"
-                      :data="chartData5"
-                      :options="opt"
-                      :styles="estilo"
-                    ></pie-chart>
-                    <pie-chart
-                      class="chart"
-                      v-else-if="n==6"
-                      :data="chartData6"
-                      :options="opt"
-                      :styles="estilo"
-                    ></pie-chart>
-                  </v-card>
-                </v-tab-item>
-              </v-tabs>
             
-          </div>
-          </v-content>
+              
+
+
+              
+
+
+
+              
+            
+          
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-content>
@@ -156,34 +106,16 @@
 <script>
 import Formulario from "../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
-import PieChart from "../components/graficos/PieChart.js";
+
 
 export default {
-  components: {
-    PieChart
-  },
+ 
   data: () => ({
-    formulario: "",
     panel: [0, 0, 0],
+    formulario: "",
     resultadoCalculoReproducao: "",
     form: "",
     active: null,
-    //graficos
-    legenda: ["Green", "Red", "Blue"],
-    cores: ["#41B883", "#E46651", "#00D8FF"],
-    opt: {
-      responsive: true,
-      maintainAspectRatio: true
-    },
-    estilo: {
-      height: "40%",
-      width: "40%"
-    },
-
-    dataComposiçãoDoRebanhoMedioPorCabecasPercentual: [1, 10, 5],
-    dataComposiçãoDoRebanhoMedioPorCabecasAbsoluto: [2, 5, 3],
-
-    
 
     headers: [
       {
@@ -511,35 +443,6 @@ export default {
     }
   },
 
-  computed:{
-
-    chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual: function() {
-      return{
-      labels: this.legenda,
-      datasets: [
-        {
-          backgroundColor: this.cores,
-          data: this.dataComposiçãoDoRebanhoMedioPorCabecasPercentual
-        }
-      ]
-      }
-      
-    },
-
-    chartDataComposiçãoDoRebanhoMedioPorCabecasAbsoluto: function() {
-      return{
-labels: this.legenda,
-      datasets: [
-        {
-          backgroundColor: this.cores,
-          data: this.dataComposiçãoDoRebanhoMedioPorCabecasAbsoluto
-        }
-      ]
-      }
-      
-    },
-
-  },
   beforeCreate() {
     var db = new Dexie("simulacao");
     db.version(1).stores({
