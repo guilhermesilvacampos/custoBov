@@ -88,9 +88,30 @@
           <v-btn href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
 
             
-              
+              <div class="grafico">
+                <v-layout row wrap >
+      <v-flex xs12 md6>
+        <v-card >
+
+          <tab-grafico-composicao-do-rebanho-por-cabeca-percentual/>
+
+        </v-card>
+      </v-flex>
+        <v-flex xs12 md6>
+        <v-card >
+
+          <tab-grafico-composicao-do-rebanho-por-cabeca-percentual/>
+
+        </v-card>
+
+      </v-flex>
 
 
+
+              </v-layout>
+              </div>
+
+      
               
 
 
@@ -106,9 +127,13 @@
 <script>
 import Formulario from "../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
+import TabGraficoComposicaoDoRebanhoPorCabecaPercentual from '../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorCabeca.vue'
 
 
 export default {
+  components:{
+    'tab-grafico-composicao-do-rebanho-por-cabeca-percentual' : TabGraficoComposicaoDoRebanhoPorCabecaPercentual,
+  },
  
   data: () => ({
     panel: [0, 0, 0],
@@ -559,6 +584,7 @@ export default {
     color: #00695c;
   }
   .grafico {
+    display: inline-block;
     margin-top: 5%;
     margin-left: 1%;
     margin-right: 1%;
@@ -628,8 +654,9 @@ export default {
   }
 
   .grafico {
-    margin-top: 10%;
-    margin-left: 1%;
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 4%;
     margin-right: 1%;
     margin-bottom: 5%;
   }

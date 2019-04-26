@@ -13,11 +13,11 @@ export default {
   },
   data: () => ({
   chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual: {
-        labels: ["Green", "Red", "Blue"],
+        labels: ["Yellow", "Blue", "Black"],
         datasets: [
           {
             label: "Data One",
-            backgroundColor: ["#41B883", "#E46651", "#00D8FF"],
+            backgroundColor: ["yellow", "blue", "black"],
             data: [1, 10, 5]
           }
         ]
