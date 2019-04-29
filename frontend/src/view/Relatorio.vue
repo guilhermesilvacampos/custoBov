@@ -4,21 +4,49 @@
       <h1>Relatórios</h1>
       <br>
       <v-expansion-panel v-model="panel[0]" expand class="panel">
-        
         <v-expansion-panel-content>
-          
           <template v-slot:header>
             <h2>Dados Gerais do Rebanho de Reprodução</h2>
           </template>
-          
 
           <v-data-table hide-actions :headers="headers" :items="desserts" class="elevation-1">
+            <template slot="headers" slot-scope="props">
+              <tr >
+                <th >{{props.headers[0].text}}</th>
+                <th >
+                  {{props.headers[1].text}}
+                  <tr>
+                    <th >{{props.headers[2].text}}</th>
+                    <th >{{props.headers[3].text}}</th>
+                  </tr>
+                </th>
+
+                <th >
+                  {{props.headers[4].text}}
+                  <tr>
+                    <th >{{props.headers[5].text}}</th>
+                    <th >{{props.headers[6].text}}</th>
+                  </tr>
+                </th>
+              </tr>
+            </template>
             <template v-slot:items="props">
               <td>{{ props.item.name }}</td>
-              <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoInicial }}</td>
-              <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoFinal }}</td>
-              <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoInicial }}</td>
-              <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoFinal }}</td>
+
+              <td>
+                <tr>
+                  <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoInicial }}</td>
+                  <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoFinal }}</td>
+                </tr>
+              </td>
+              <td>
+                <tr>
+                  <td
+                    class="text-xs-center"
+                  >{{ props.item.rebanhoReproducaoValorEstoqueGadoInicial }}</td>
+                  <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoFinal }}</td>
+                </tr>
+              </td>
             </template>
           </v-data-table>
 
@@ -87,10 +115,7 @@
               <td class="text-xs-center">{{ props10.item.totalRebanhoMedioUA }}</td>
             </template>
           </v-data-table>
-
-          
-
-</v-expansion-panel-content>
+        </v-expansion-panel-content>
       </v-expansion-panel>
 
       <v-expansion-panel v-model="panel[1]" expand class="panel">
@@ -98,77 +123,55 @@
           <template v-slot:header>
             <h2>Graficos Gerais do Rebanho</h2>
           </template>
-            
-              <div class="grafico">
-                <v-layout row wrap >
-      <v-flex xs12 md6>
-        <v-card >
 
-          <tab-grafico-composicao-do-rebanho-por-cabeca/>
-
-        </v-card>
-      </v-flex>
-        <v-flex xs12 md6>
-        <v-card >
-
-          <tab-grafico-composicao-do-rebanho-por-ua/>
-
-        </v-card>
-
-      </v-flex>
-
-
-
-              </v-layout>
-              </div>
-
-              <div class="grafico1">
-              <v-layout row wrap>
-                
-               <v-flex xs12 md12>
-        <v-card >
-
-          <tab-grafico-composicao-do-rebanho-por-categoria-animal/>
-
-        </v-card>
-
-      </v-flex>
-       
-              
-              </v-layout>
-              </div>
-              <v-flex offset-md5 offset-xs2 offset-sm3>
-
-      <v-btn  href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
+          <div class="grafico">
+            <v-layout row wrap>
+              <v-flex xs12 md6>
+                <v-card>
+                  <tab-grafico-composicao-do-rebanho-por-cabeca/>
+                </v-card>
               </v-flex>
+              <v-flex xs12 md6>
+                <v-card>
+                  <tab-grafico-composicao-do-rebanho-por-ua/>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </div>
 
-</v-expansion-panel-content>
+          <div class="grafico1">
+            <v-layout row wrap>
+              <v-flex xs12 md12>
+                <v-card>
+                  <tab-grafico-composicao-do-rebanho-por-categoria-animal/>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </div>
+          <v-flex offset-md5 offset-xs2 offset-sm3>
+            <v-btn href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
+          </v-flex>
+        </v-expansion-panel-content>
       </v-expansion-panel>
-
-              
-            
-          
-        
     </v-content>
   </v-container>
 </template>
 <script>
 import Formulario from "../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
-import TabGraficoComposicaoDoRebanhoPorCabeca from '../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorCabeca.vue'
-import TabGraficoComposicaoDoRebanhoPorUa from '../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorUa.vue'
-import TabGraficoValorDoRebanhoMedioPorCategoriaAnimal from '../components/tabs/TabGraficoValorDoRebanhoMedioPorCategoriaAnimal.vue'
-
+import TabGraficoComposicaoDoRebanhoPorCabeca from "../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorCabeca.vue";
+import TabGraficoComposicaoDoRebanhoPorUa from "../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorUa.vue";
+import TabGraficoValorDoRebanhoMedioPorCategoriaAnimal from "../components/tabs/TabGraficoValorDoRebanhoMedioPorCategoriaAnimal.vue";
 
 export default {
-  components:{
-    'tab-grafico-composicao-do-rebanho-por-cabeca' : TabGraficoComposicaoDoRebanhoPorCabeca,
-    'tab-grafico-composicao-do-rebanho-por-ua' : TabGraficoComposicaoDoRebanhoPorUa,
-    'tab-grafico-composicao-do-rebanho-por-categoria-animal' : TabGraficoValorDoRebanhoMedioPorCategoriaAnimal,
+  components: {
+    "tab-grafico-composicao-do-rebanho-por-cabeca": TabGraficoComposicaoDoRebanhoPorCabeca,
+    "tab-grafico-composicao-do-rebanho-por-ua": TabGraficoComposicaoDoRebanhoPorUa,
+    "tab-grafico-composicao-do-rebanho-por-categoria-animal": TabGraficoValorDoRebanhoMedioPorCategoriaAnimal
   },
- 
+
   data: () => ({
-    panel: [0, 0, 0,0],
+    panel: [0, 0, 0, 0],
     formulario: "",
     resultadoCalculoReproducao: "",
     form: "",
@@ -181,27 +184,35 @@ export default {
         sortable: false,
         value: "name"
       },
+      {
+        text: "Peso vivo total do rebanho(kg)",
+        align: "right"
+      },
 
       {
-        text: "Peso vivo total do rebanho(kg) Inicial",
+        text: "Inicial",
         value: "rebanhoReproducaoPesoVivoInicial",
         align: "left"
       },
       {
-        text: "Peso vivo total do rebanho(kg) Final",
+        text: " Final",
         value: "rebanhoReproducaoPesoVivoFinal",
+        align: "left"
+      },
+      {
+        text: "Valor estoque gado (R$)",
         align: "left"
       },
 
       {
-        text: "Valor estoque gado (R$) Inicial",
+        text: "Inicial",
         value: "rebanhoReproducaoValorEstoqueGadoInicial",
-        align: "left"
+        align: "right"
       },
       {
-        text: "Valor estoque gado(R$) Final",
+        text: "Final",
         value: "rebanhoReproducaoValorEstoqueGadoFinal",
-        align: "left"
+        align: "right"
       }
     ],
     desserts: [
@@ -618,7 +629,7 @@ export default {
   .grafico {
     display: inline-block;
     margin-top: 5%;
-    
+
     margin-bottom: 3%;
   }
   .chart {
@@ -647,7 +658,6 @@ export default {
   .button {
     margin-top: 5%;
     margin-bottom: 5%;
-    
   }
   .divider {
     margin-top: 5%;
@@ -691,7 +701,7 @@ export default {
     margin-right: 1%;
     margin-bottom: 5%;
   }
-  .grafico1{
+  .grafico1 {
     display: inline-block;
     margin-top: 2%;
     margin-left: 30%;
@@ -722,11 +732,7 @@ export default {
   }
 
   .button {
-    
-    
     margin-bottom: 2%;
-    
-    
   }
 
   .divider {
