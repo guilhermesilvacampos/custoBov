@@ -5,12 +5,12 @@
 
       <v-flex xs4 md6 >
         
-                <v-tab  class="texto">Composição (%) do rebanho médio (Por UA) Percentual</v-tab>
+                <v-tab  class="texto">Valor do rebanho médio por categoria animal (R$) Percentual</v-tab>
         
       </v-flex>
       <v-flex xs4 md6>
         
-                <v-tab  class="texto">Composição (%) do rebanho médio (Por UA) Absoluto</v-tab>
+                <v-tab  class="texto">Valor do rebanho médio por categoria animal (R$) Absoluto</v-tab>
         
       </v-flex>
 
@@ -29,13 +29,13 @@
     
 </template>
 <script>
-import ComposicaoDoRebanhoMedioPorUaPercentual from '../graficos/ComposicaoDoRebanhoMedioPorUaPercentual.vue'
-import ComposicaoDoRebanhoMedioPorUaAbsoluto from '../graficos/ComposicaoDoRebanhoMedioPorUaAbsoluto.vue'
+import ValorDoRebanhoMedioPorCategoriaAnimalPercentual from '../graficos/ValorDoRebanhoMedioPorCategoriaAnimalPercentual.vue'
+import ValorDoRebanhoMedioPorCategoriaAnimalAbsoluto from '../graficos/ValorDoRebanhoMedioPorCategoriaAnimalAbsoluto.vue'
 
 export default {
   components:{
-    'grafico-pizza-percentual' : ComposicaoDoRebanhoMedioPorUaPercentual,
-    'grafico-pizza-absoluto' : ComposicaoDoRebanhoMedioPorUaAbsoluto
+    'grafico-pizza-percentual' : ValorDoRebanhoMedioPorCategoriaAnimalPercentual,
+    'grafico-pizza-absoluto' : ValorDoRebanhoMedioPorCategoriaAnimalAbsoluto
   },
   
     

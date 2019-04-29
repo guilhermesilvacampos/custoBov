@@ -4,10 +4,13 @@
       <h1>Relatórios</h1>
       <br>
       <v-expansion-panel v-model="panel[0]" expand class="panel">
+        
         <v-expansion-panel-content>
+          
           <template v-slot:header>
             <h2>Dados Gerais do Rebanho de Reprodução</h2>
           </template>
+          
 
           <v-data-table hide-actions :headers="headers" :items="desserts" class="elevation-1">
             <template v-slot:items="props">
@@ -85,22 +88,30 @@
             </template>
           </v-data-table>
 
-          <v-btn href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
+          
 
+</v-expansion-panel-content>
+      </v-expansion-panel>
+
+      <v-expansion-panel v-model="panel[1]" expand class="panel">
+        <v-expansion-panel-content>
+          <template v-slot:header>
+            <h2>Graficos Gerais do Rebanho</h2>
+          </template>
             
               <div class="grafico">
                 <v-layout row wrap >
       <v-flex xs12 md6>
         <v-card >
 
-          <tab-grafico-composicao-do-rebanho-por-cabeca-percentual/>
+          <tab-grafico-composicao-do-rebanho-por-cabeca/>
 
         </v-card>
       </v-flex>
         <v-flex xs12 md6>
         <v-card >
 
-          <tab-grafico-composicao-do-rebanho-por-cabeca-percentual/>
+          <tab-grafico-composicao-do-rebanho-por-ua/>
 
         </v-card>
 
@@ -111,32 +122,53 @@
               </v-layout>
               </div>
 
-      
+              <div class="grafico1">
+              <v-layout row wrap>
+                
+               <v-flex xs12 md12>
+        <v-card >
+
+          <tab-grafico-composicao-do-rebanho-por-categoria-animal/>
+
+        </v-card>
+
+      </v-flex>
+       
               
+              </v-layout>
+              </div>
+              <v-flex offset-md5 offset-xs2 offset-sm3>
 
+      <v-btn  href="/#/" class="button" color="success">Visualizar Formulário !{{form}}</v-btn>
+              </v-flex>
 
+</v-expansion-panel-content>
+      </v-expansion-panel>
 
               
             
           
-        </v-expansion-panel-content>
-      </v-expansion-panel>
+        
     </v-content>
   </v-container>
 </template>
 <script>
 import Formulario from "../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
-import TabGraficoComposicaoDoRebanhoPorCabecaPercentual from '../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorCabeca.vue'
+import TabGraficoComposicaoDoRebanhoPorCabeca from '../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorCabeca.vue'
+import TabGraficoComposicaoDoRebanhoPorUa from '../components/tabs/TabGraficoComposicaoDoRebanhoMedioPorUa.vue'
+import TabGraficoValorDoRebanhoMedioPorCategoriaAnimal from '../components/tabs/TabGraficoValorDoRebanhoMedioPorCategoriaAnimal.vue'
 
 
 export default {
   components:{
-    'tab-grafico-composicao-do-rebanho-por-cabeca-percentual' : TabGraficoComposicaoDoRebanhoPorCabecaPercentual,
+    'tab-grafico-composicao-do-rebanho-por-cabeca' : TabGraficoComposicaoDoRebanhoPorCabeca,
+    'tab-grafico-composicao-do-rebanho-por-ua' : TabGraficoComposicaoDoRebanhoPorUa,
+    'tab-grafico-composicao-do-rebanho-por-categoria-animal' : TabGraficoValorDoRebanhoMedioPorCategoriaAnimal,
   },
  
   data: () => ({
-    panel: [0, 0, 0],
+    panel: [0, 0, 0,0],
     formulario: "",
     resultadoCalculoReproducao: "",
     form: "",
@@ -586,8 +618,7 @@ export default {
   .grafico {
     display: inline-block;
     margin-top: 5%;
-    margin-left: 1%;
-    margin-right: 1%;
+    
     margin-bottom: 3%;
   }
   .chart {
@@ -616,7 +647,7 @@ export default {
   .button {
     margin-top: 5%;
     margin-bottom: 5%;
-    float: right;
+    
   }
   .divider {
     margin-top: 5%;
@@ -656,7 +687,14 @@ export default {
   .grafico {
     display: inline-block;
     margin-top: 5%;
-    margin-left: 4%;
+    margin-left: 7%;
+    margin-right: 1%;
+    margin-bottom: 5%;
+  }
+  .grafico1{
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 30%;
     margin-right: 1%;
     margin-bottom: 5%;
   }
@@ -684,10 +722,11 @@ export default {
   }
 
   .button {
-    margin-top: 2%;
+    
+    
     margin-bottom: 2%;
-    float: right;
-    margin-right: 2%;
+    
+    
   }
 
   .divider {

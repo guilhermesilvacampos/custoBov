@@ -1,6 +1,6 @@
 <template>
   <pie-chart
-    :data="chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual"
+    :data="chartDataComposiçãoDoRebanhoMedioPorUaAbsoluto"
     :options="opt"
     :styles="estilo"
   />
@@ -12,13 +12,13 @@ export default {
     PieChart,
   },
   data: () => ({
-  chartDataComposiçãoDoRebanhoMedioPorCabecasPercentual: {
+  chartDataComposiçãoDoRebanhoMedioPorUaAbsoluto: {
         labels: ["Touros", "Vacas(Matrizes)", "Fêmeas +36 meses", "Fêmeas 24-36 meses","Fêmeas 12-24 meses","Fêmeas 0-12 meses", "Machos 12-24 meses", "Machos 24-36 meses","Machos +36 meses inclusive tourunos"],
         datasets: [
           {
             label: "Data One",
-            backgroundColor: ["purple","red", "blue", "black","green","orange","grey","brown","pink","violet"],
-            data: [1, 7, 3,2,8,9,7,3,5,6]
+            backgroundColor: ["orange","purple","red", "blue", "black","green","grey","brown","pink","violet"],
+            data: [3, 7, 5,2,8,7,7,3,5,6]
           }
         ]
       },
