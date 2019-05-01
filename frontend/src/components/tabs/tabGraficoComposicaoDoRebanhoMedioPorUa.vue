@@ -37,6 +37,10 @@ export default {
     'grafico-pizza-percentual' : ComposicaoDoRebanhoMedioPorUaPercentual,
     'grafico-pizza-absoluto' : ComposicaoDoRebanhoMedioPorUaAbsoluto
   },
+
+  data: () => ({
+    active: null
+  })
   
     
 }

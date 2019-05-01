@@ -37,6 +37,10 @@ export default {
     'grafico-pizza-percentual' : ValorDoRebanhoMedioPorCategoriaAnimalPercentual,
     'grafico-pizza-absoluto' : ValorDoRebanhoMedioPorCategoriaAnimalAbsoluto
   },
+
+  data: () => ({
+active: null
+  })
   
     
 }

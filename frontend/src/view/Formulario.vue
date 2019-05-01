@@ -72,7 +72,7 @@
               <v-divider></v-divider>
 
               <v-layout align-center justify-center row wrap>
-                <v-flex xs7 sm7 md3>
+                <v-flex xs7 sm7 md2>
                   <v-text-field
                     name="touroPesoMedio"
                     type="number"
@@ -88,7 +88,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="touroCabecaInicial"
                     type="number"
@@ -144,7 +144,7 @@
               <v-divider></v-divider>
 
               <v-layout align-center justify-center row wrap>
-                <v-flex xs7 sm7 md3>
+                <v-flex xs7 sm7 md2>
                   <v-text-field
                     name="vacaMatrizPesoMedio"
                     type="number"
@@ -160,7 +160,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="vacaMatrizCabecaInicial"
                     type="number"
@@ -259,7 +259,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="femeas36Valor"
                     type="number"
@@ -348,7 +348,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="femeas2436Valor"
                     type="number"
@@ -437,7 +437,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="femeas1224Valor"
                     type="number"
@@ -526,7 +526,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="femeas012Valor"
                     type="number"
@@ -615,7 +615,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="machos012Valor"
                     type="number"
@@ -704,7 +704,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="machos1224Valor"
                     type="number"
@@ -793,7 +793,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="machos2436Valor"
                     type="number"
@@ -882,7 +882,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md3>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="machos36Valor"
                     type="number"
@@ -966,6 +966,9 @@
               <v-btn class="button" type="submit" color="primary">Visualizar Relatório !{{form}}</v-btn>
             </v-expansion-panel-content>
           </v-expansion-panel>
+
+          <panel-graficos/>
+          
         </v-form>
       </v-content>
     </v-container>
@@ -974,8 +977,11 @@
 <script>
 import Formulario from "../class/Formulario.js";
 import Dictionary from "../class/Dictionary.js";
+import PanelGraficos from '../components/panel/PanelGraficos.vue'
 export default {
-  name: "formulario",
+  components:{
+"panel-graficos": PanelGraficos,
+  },
 
   $_veeValidate: {
     validator: "new"
@@ -1097,13 +1103,7 @@ h2{
     background-color: white;
     box-shadow: 0 4px 10px black;
   }
-  .form {
-    margin-top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 70%;
-    min-width: 50%;
-  }
+  
   .flex {
     margin-left: auto;
     margin-right: auto;
