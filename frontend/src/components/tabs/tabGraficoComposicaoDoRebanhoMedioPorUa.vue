@@ -3,14 +3,14 @@
 <v-flex>
 <v-tabs  v-model="active"  color="#00695c" dark slider-color="blue">
 
-      <v-flex xs4 md6 >
+      <v-flex xs4 sm3 md6 >
         
-                <v-tab  class="texto">Composição (%) do rebanho médio (Por UA) Percentual</v-tab>
+                <v-tab  class="texto">Rebanho médio (Por UA) Percentual</v-tab>
         
       </v-flex>
-      <v-flex xs4 md6>
+      <v-flex xs4 sm3 md6>
         
-                <v-tab  class="texto">Composição (%) do rebanho médio (Por UA) Absoluto</v-tab>
+                <v-tab  class="texto">Rebanho médio (Por UA) Absoluto</v-tab>
         
       </v-flex>
 

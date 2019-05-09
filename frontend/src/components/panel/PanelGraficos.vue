@@ -2,21 +2,26 @@
 <v-expansion-panel v-model="panel[0]" expand class="panel">
         <v-expansion-panel-content>
           <template v-slot:header>
-            <h2>Graficos do Rebanho</h2>
+            <h2>Gráficos do Rebanho</h2>
           </template>
 
           <div class="grafico">
             <v-layout row wrap>
-              <v-flex xs12 md6>
-                <v-card>
-                  <tab-grafico-composicao-do-rebanho-por-cabeca/>
-                </v-card>
-              </v-flex>
+
               <v-flex xs12 md6>
                 <v-card>
                   <tab-grafico-composicao-do-rebanho-por-ua/>
                 </v-card>
               </v-flex>
+
+              <v-flex xs12 md6>
+                <v-card>
+                  <tab-grafico-composicao-do-rebanho-por-cabeca/>
+                </v-card>
+              </v-flex>
+
+              
+
             </v-layout>
           </div>
 
@@ -62,7 +67,7 @@ export default {
 @media screen and (max-width: 991px) {
   
   .grafico {
-    display: inline-block;
+    
     margin-top: 5%;
 
     margin-bottom: 3%;
@@ -90,7 +95,7 @@ export default {
   .grafico {
     display: inline-block;
     margin-top: 5%;
-    margin-left: 7%;
+    margin-left: 10%;
     margin-right: 1%;
     margin-bottom: 5%;
   }

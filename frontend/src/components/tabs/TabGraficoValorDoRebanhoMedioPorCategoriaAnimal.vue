@@ -1,16 +1,16 @@
 
 <template>
 <v-flex>
-<v-tabs  v-model="active"  color="#00695c" dark slider-color="blue">
+<v-tabs  v-model="active"  color="#00695c" dark >
 
-      <v-flex xs4 md6 >
+      <v-flex xs4 sm3 md6 >
         
-                <v-tab  class="texto">Valor do rebanho médio por categoria animal (R$) Percentual</v-tab>
+                <v-tab  class="texto">(R$)Rebanho médio (categoria animal) Percentual</v-tab>
         
       </v-flex>
-      <v-flex xs4 md6>
+      <v-flex xs4 sm3 md6 >
         
-                <v-tab  class="texto">Valor do rebanho médio por categoria animal (R$) Absoluto</v-tab>
+                <v-tab  class="texto">(R$)Rebanho médio (categoria animal) Absoluto</v-tab>
         
       </v-flex>
 
@@ -48,11 +48,13 @@ active: null
 <style scoped>
 .texto{
   font-size: 10px;
-  
+  text-align: left;
 }
 .flex{
   background-color: #00695c;
+  
 }
+
 
 </style>
 

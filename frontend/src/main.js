@@ -5,12 +5,14 @@ import './registerServiceWorker'
 import VueRouter from 'vue-router'
 import { routes } from './routes'
 import VeeValidate from 'vee-validate'
-import VueCharts from 'vue-chartjs'
+
+
 
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
-Vue.use(VueCharts);
+
+
 
 
 Vue.config.productionTip = false

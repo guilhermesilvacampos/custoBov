@@ -80,7 +80,7 @@
                     :error-messages="errors.collect('touroPesoMedio')"
                     data-vv-name="touroPesoMedio"
                     background-color="white"
-                    label="Peso Médio kg/cab"
+                    label="Peso kg/cab"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroPesoMedio"
                     required
@@ -138,7 +138,7 @@
 
               <div class="divider2">
                 <span>
-                  <b>Vacas(Matrizes)</b>
+                  <b>Vacas</b>
                 </span>
               </div>
               <v-divider></v-divider>
@@ -152,7 +152,7 @@
                     :error-messages="errors.collect('vacaMatrizPesoMedio')"
                     data-vv-name="vacaMatrizPesoMedio"
                     background-color="white"
-                    label="Peso Médio kg/cab"
+                    label="Peso kg/cab"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizPesoMedio"
                     required
@@ -235,7 +235,7 @@
                     :error-messages="errors.collect('femeas36PesoInicial')"
                     data-vv-name="femeas36PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36PesoInicial"
                     required
@@ -248,7 +248,7 @@
                     name="femeas36PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36PesoFinal"
                     v-validate="'required'"
@@ -264,7 +264,7 @@
                     name="femeas36Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36Valor"
                     v-validate="'required'"
@@ -324,7 +324,7 @@
                     :error-messages="errors.collect('femeas2436PesoInicial')"
                     data-vv-name="femeas2436PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436PesoInicial"
                     required
@@ -337,7 +337,7 @@
                     name="femeas2436PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436PesoFinal"
                     v-validate="'required'"
@@ -353,7 +353,7 @@
                     name="femeas2436Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436Valor"
                     v-validate="'required'"
@@ -413,7 +413,7 @@
                     :error-messages="errors.collect('femeas1224PesoInicial')"
                     data-vv-name="femeas1224PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224PesoInicial"
                     required
@@ -426,7 +426,7 @@
                     name="femeas1224PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224PesoFinal"
                     v-validate="'required'"
@@ -442,7 +442,7 @@
                     name="femeas1224Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224Valor"
                     v-validate="'required'"
@@ -502,7 +502,7 @@
                     :error-messages="errors.collect('femeas012PesoInicial')"
                     data-vv-name="femeas012PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012PesoInicial"
                     required
@@ -515,7 +515,7 @@
                     name="femeas012PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012PesoFinal"
                     v-validate="'required'"
@@ -531,7 +531,7 @@
                     name="femeas012Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012Valor"
                     v-validate="'required'"
@@ -591,7 +591,7 @@
                     :error-messages="errors.collect('machos012PesoInicial')"
                     data-vv-name="machos012PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012PesoInicial"
                     required
@@ -604,7 +604,7 @@
                     name="machos012PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012PesoFinal"
                     v-validate="'required'"
@@ -620,7 +620,7 @@
                     name="machos012Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012Valor"
                     v-validate="'required'"
@@ -680,7 +680,7 @@
                     :error-messages="errors.collect('machos1224PesoInicial')"
                     data-vv-name="machos1224PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224PesoInicial"
                     required
@@ -693,7 +693,7 @@
                     name="machos1224PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224PesoFinal"
                     v-validate="'required'"
@@ -709,7 +709,7 @@
                     name="machos1224Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224Valor"
                     v-validate="'required'"
@@ -769,7 +769,7 @@
                     :error-messages="errors.collect('machos2436PesoInicial')"
                     data-vv-name="machos2436PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436PesoInicial"
                     required
@@ -782,7 +782,7 @@
                     name="machos2436PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436PesoFinal"
                     v-validate="'required'"
@@ -798,7 +798,7 @@
                     name="machos2436Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436Valor"
                     v-validate="'required'"
@@ -858,7 +858,7 @@
                     :error-messages="errors.collect('machos36PesoInicial')"
                     data-vv-name="machos36PesoInicial"
                     background-color="white"
-                    label="Peso(kg)Inicial"
+                    label="Peso(kg/cab)Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36PesoInicial"
                     required
@@ -871,7 +871,7 @@
                     name="machos36PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg)Final"
+                    label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36PesoFinal"
                     v-validate="'required'"
@@ -887,7 +887,7 @@
                     name="machos36Valor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/Kg Vivo"
+                    label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36Valor"
                     v-validate="'required'"
@@ -967,7 +967,7 @@
             </v-expansion-panel-content>
           </v-expansion-panel>
 
-          <panel-graficos/>
+          <panel-graficos />
           
         </v-form>
       </v-content>
@@ -992,6 +992,12 @@ export default {
     forme: "",
     panel: [0, 0, 0]
   }),
+
+  updated(){
+console.log("update");
+  },
+
+
   computed: {
     form: function() {
       var db = new Dexie("simulacao");
@@ -1023,7 +1029,7 @@ export default {
           db.simulacao
             .put({ id: 1, formularioDB: this.formulario })
             .then(function() {
-              window.location.href = "/#/relatorio";
+              window.location.href = "/#/";
             });
         }
       });

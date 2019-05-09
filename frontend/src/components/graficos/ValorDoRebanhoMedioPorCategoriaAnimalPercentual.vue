@@ -1,39 +1,98 @@
 <template>
-  <pie-chart
-    :data="chartDataValorDoRebanhoMedioPorCategoriaAnimalPercentual"
-    :options="opt"
-    :styles="estilo"
-  />
+  <div>
+  <apexchart width="500" type="pie" :options="options" :series="series" :width="largura" ></apexchart>
+</div>
 </template>
 <script>
-import PieChart from "./PieChart.js";
+import VueApexCharts from 'vue-apexcharts';
+import Formulario from "../../class/Formulario.js";
+import BibliotecaDeCalculos from "bibliotecadecalculos";
 export default {
      components: {
-    PieChart,
+    'apexchart':VueApexCharts,
   },
   data: () => ({
-  chartDataValorDoRebanhoMedioPorCategoriaAnimalPercentual: {
-        labels: ["Touros", "Vacas(Matrizes)", "Fêmeas +36 meses", "Fêmeas 24-36 meses","Fêmeas 12-24 meses","Fêmeas 0-12 meses", "Machos 12-24 meses", "Machos 24-36 meses","Machos +36 meses inclusive tourunos"],
-        datasets: [
-          {
-            label: "Data One",
-            backgroundColor: ["black","green","grey","orange","purple","red", "blue","brown","pink","violet"],
-            data: [8, 10, 5,5,8,9,7,3,7,6]
-          }
-        ]
-      },
-
-    opt: {
-      responsive: true,
-      maintainAspectRatio: true
+  options: {
+    legend:{
+      position:'top'
     },
-
-    estilo: {
-      height: "100%",
-      width: "100%"
+    colors :["#01FF12","#E81E60", "#362AEB", "#E8BF1E","#21FF93","#8821FF","#E8811E","#EE21FF","#B5FF87","#FF382E"],
+    labels: ["Touros", "Vacas", "F 36+", "F 24-36","F 12-24","F 0-12", "M 012", "M 12-24", "M 24-36","M 36+"],
+    dataLabels: {
+       
+    enabled: true,
+    formatter: function (val) {
+        return parseFloat(val.toFixed(2)) + '%'
     },
+    },
+    
+  },
+      series:  [0,0, 0,0,0,0,0,0,0,0],
+      largura:'100%',
+      comprimento: '200%',
+      formulario: ''
 
-  })
+      
+
+  }),
+
+  
+
+  mounted() {
+    var db = new Dexie("simulacao");
+    db.version(1).stores({
+      simulacao: "id,formularioDB"
+    });
+
+    db.simulacao
+      .get(1)
+      .then(f => (this.formulario = new Formulario(f.formularioDB)))
+      .then(function(form) {
+        
+
+        
+
+          var biblioteca= [
+BibliotecaDeCalculos.RebanhoTotal(
+            BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
+            BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria))
+
+          ]
+            
+
+          
+
+          
+       
+
+        return biblioteca;  
+      })
+      .then(
+        g => (
+          
+          //recria/ engorda parseFloat(conta.toFixed(2));
+          this.series[0] = g[0].composicaoValorCategoriaTouro(),
+          this.series[1] = g[0].composicaoValorCategoriaVaca(),
+
+          this.series[2] = g[0].composicaoValorCategoriaFemeas36(),
+          this.series[3] = g[0].composicaoValorCategoriaFemeas2436(),
+          this.series[4] = g[0].composicaoValorCategoriaFemeas1224(),
+          this.series[5] = g[0].composicaoValorCategoriaFemeas012(),
+          this.series[6] = g[0].composicaoValorCategoriaMachos012(),
+          this.series[7] = g[0].composicaoValorCategoriaMachos1224(),
+          this.series[8] = g[0].composicaoValorCategoriaMachos2436(),
+          this.series[9] = g[0].composicaoValorCategoriaMachos36()
+
+
+          
+         
+        )
+        
+      );
+     
+
+    
+}
      
 
     
