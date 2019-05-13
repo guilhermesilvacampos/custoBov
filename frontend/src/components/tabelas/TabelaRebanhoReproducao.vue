@@ -1,0 +1,171 @@
+<template>
+
+<v-data-table hide-actions :headers="headers" :items="desserts" class="elevation-1">
+            <template v-slot:items="props">
+              <td>{{ props.item.name }}</td>
+
+              <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoInicial }}</td>
+              <td class="text-xs-center">{{ props.item.rebanhoReproducaoPesoVivoFinal }}</td>
+
+              <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoInicial }}</td>
+              <td class="text-xs-center">{{ props.item.rebanhoReproducaoValorEstoqueGadoFinal }}</td>
+            </template>
+          </v-data-table>
+
+
+    
+</template>
+<script>
+import Formulario from "../../class/Formulario.js";
+import BibliotecaDeCalculos from "bibliotecadecalculos";
+export default {
+
+
+data: () => ({
+    formulario: "",
+
+    headers: [
+      {
+        text: "Rebanho de Reprodução",
+        align: "left",
+        sortable: false,
+        value: "name"
+      },
+     
+
+      {
+        text: "Peso vivo total do rebanho(kg) Inicial",
+        value: "rebanhoReproducaoPesoVivoInicial",
+        align: "left"
+      },
+      {
+        text: "Peso vivo total do rebanho(kg) Final",
+        value: "rebanhoReproducaoPesoVivoFinal",
+        align: "left"
+      },
+      
+      {
+        text: "Valor estoque gado (R$) Inicial",
+        value: "rebanhoReproducaoValorEstoqueGadoInicial",
+        align: "right"
+      },
+      {
+        text: "Valor estoque gado (R$) Final",
+        value: "rebanhoReproducaoValorEstoqueGadoFinal",
+        align: "right"
+      }
+    ],
+    desserts: [
+      {
+        name: "Touros",
+        rebanhoReproducaoPesoVivoInicial: "erro",
+        rebanhoReproducaoPesoVivoFinal: "erro",
+        rebanhoReproducaoValorEstoqueGadoInicial: "erro",
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "Vacas (Matrizes)",
+        rebanhoReproducaoPesoVivoInicial: "erro",
+        rebanhoReproducaoPesoVivoFinal: "erro",
+        rebanhoReproducaoValorEstoqueGadoInicial: "erro",
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      },
+      {
+        name: "SUBTOTAL",
+
+        rebanhoReproducaoPesoVivoInicial: "erro",
+        rebanhoReproducaoPesoVivoFinal: "erro",
+        rebanhoReproducaoValorEstoqueGadoInicial: "erro",
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      },
+
+      {
+        name: "Diferença no Estoque e Valor Do Gado de Cria (final-inicial)",
+
+        rebanhoReproducaoPesoVivoFinal: "erro",
+
+        rebanhoReproducaoValorEstoqueGadoFinal: "erro"
+      }
+    ],
+    
+}),
+
+beforeCreate() {
+    var db = new Dexie("simulacao");
+    db.version(1).stores({
+      simulacao: "id,formularioDB"
+    });
+
+    db.simulacao
+      .get(1)
+      .then(f => (this.formulario = new Formulario(f.formularioDB)))
+      .then(function(form) {
+        console.log(form);
+        console.log(form.RebanhoDeRecria);
+
+        
+          
+
+          
+         
+
+        return BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao);
+      })
+      .then(
+        g => (
+          //reprodução
+
+          (this.desserts[0].rebanhoReproducaoPesoVivoInicial = g.pesoVivoTotalDoRebanhoInicialTouro()),
+          (this.desserts[0].rebanhoReproducaoValorEstoqueGadoInicial = g.valorEstoqueInicialTouro()),
+          (this.desserts[1].rebanhoReproducaoPesoVivoInicial = g.pesoVivoTotalDoRebanhoInicialVaca()),
+          (this.desserts[1].rebanhoReproducaoValorEstoqueGadoInicial = g.valorEstoqueInicialVaca()),
+          (this.desserts[2].rebanhoReproducaoPesoVivoInicial = g.subtotalDoPesoVivoTotalInicial()),
+          (this.desserts[2].rebanhoReproducaoValorEstoqueGadoInicial = g.subtotalDoValorDoEstoqueInicial()),
+          (this.desserts[0].rebanhoReproducaoPesoVivoFinal = g.pesoVivoTotalDoRebanhoFinalTouro()),
+          (this.desserts[0].rebanhoReproducaoValorEstoqueGadoFinal = g.valorEstoqueFinalTouro()),
+          (this.desserts[1].rebanhoReproducaoPesoVivoFinal = g.pesoVivoTotalDoRebanhoFinalVaca()),
+          (this.desserts[1].rebanhoReproducaoValorEstoqueGadoFinal = g.valorEstoqueFinalVaca()),
+          (this.desserts[2].rebanhoReproducaoPesoVivoFinal = g.diferencaDePesoNoEstoque()),
+          (this.desserts[2].rebanhoReproducaoValorEstoqueGadoFinal = g.diferencaNoValorDoEstoque()),
+          (this.desserts[3].rebanhoReproducaoPesoVivoFinal = g.subtotalDoPesoVivoTotalFinal()),
+          (this.desserts[3].rebanhoReproducaoValorEstoqueGadoFinal = g.subtotalDoValorDoEstoqueFinal())
+        
+         
+      )
+      );
+  }
+
+}
+</script>
+<style scoped>
+
+
+@media screen and (max-width: 991px) {
+  
+
+  .elevation-1 {
+    margin-top: 3%;
+    border: solid;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-width: 1px;
+    border-color: #004f48;
+  }
+
+  
+}
+
+@media screen and (min-width: 992px) {
+ 
+  .elevation-1 {
+    margin-top: 3%;
+    border: solid;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-width: 1px;
+
+    border-color: #004f48;
+  }
+}
+
+</style>
