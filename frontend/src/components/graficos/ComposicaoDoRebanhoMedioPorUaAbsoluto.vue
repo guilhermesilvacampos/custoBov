@@ -28,7 +28,7 @@ export default {
     
   },
       series:  [0,0, 0,0,0,0,0,0,0,0],
-      largura:'106%',
+      largura:'100%',
       comprimento: '200%',
       formulario : ''
 

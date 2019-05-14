@@ -963,9 +963,1016 @@
                 </v-flex>
               </v-layout>
 
-              <v-btn  class="button" type="submit" color="primary">Visualizar Gráficos !{{form}}</v-btn>
+             
             </v-expansion-panel-content>
           </v-expansion-panel>
+
+
+            <v-expansion-panel v-model="panel[3]" expand class="panel">
+            <v-expansion-panel-content>
+              <template v-slot:header>
+                <h2>Receita Anual (Venda de Animais e Outros Produtos) </h2>
+              </template>
+
+              
+              
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas + 36 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas36PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36PesoMedioKGVivo1')"
+                    data-vv-name="femeas36PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas36PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="femeas36cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas36cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36cabeca1')"
+                    data-vv-name="femeas36cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas36ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas36ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36ValorUnitarioRSCabeca')"
+                    data-vv-name="femeas36ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas 24-36 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas2436PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436PesoMedioKGVivo1')"
+                    data-vv-name="femeas2436PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas2436PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="femeas2436cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas2436cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436cabeca1')"
+                    data-vv-name="femeas2436cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas2436ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas2436ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436ValorUnitarioRSCabeca')"
+                    data-vv-name="femeas2436ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas 12-24 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas1224PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224PesoMedioKGVivo1')"
+                    data-vv-name="femeas1224PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas1224PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="femeas1224cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas1224cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224cabeca1')"
+                    data-vv-name="femeas1224cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas1224ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas1224ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224ValorUnitarioRSCabeca')"
+                    data-vv-name="femeas1224ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+               
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas 0-12 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas012PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas012PesoMedioKGVivo1')"
+                    data-vv-name="femeas012PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas012PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="femeas012cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas012cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas012cabeca1')"
+                    data-vv-name="femeas012cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas012ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas012ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas012ValorUnitarioRSCabeca')"
+                    data-vv-name="femeas012ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+               
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Machos 0-12 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos012PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos012PesoMedioKGVivo1')"
+                    data-vv-name="machos012PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos012PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="machos012cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos012cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos012cabeca1')"
+                    data-vv-name="machos012cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos012ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos012ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos012ValorUnitarioRSCabeca')"
+                    data-vv-name="machos012ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Machos 12-24 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos1224PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224PesoMedioKGVivo1')"
+                    data-vv-name="machos1224PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos1224PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="machos1224cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos1224cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224cabeca1')"
+                    data-vv-name="machos1224cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos1224ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos1224ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224ValorUnitarioRSCabeca')"
+                    data-vv-name="machos1224ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Machos 24-36 meses</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos2436PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436PesoMedioKGVivo1')"
+                    data-vv-name="machos2436PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos2436PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="machos2436cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos2436cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436cabeca1')"
+                    data-vv-name="machos2436cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos2436ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos2436ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436ValorUnitarioRSCabeca')"
+                    data-vv-name="machos2436ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Machos + 36 meses Iclusive Tourunos</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos36PesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36PesoMedioKGVivo1')"
+                    data-vv-name="machos36PesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos36PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="machos36cabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos36cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36cabeca1')"
+                    data-vv-name="machos36cabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos36ValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.machos36ValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36ValorUnitarioRSCabeca')"
+                    data-vv-name="machos36ValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Touros </b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="touroPesoMedioKGVivo1"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('touroPesoMedioKGVivo1')"
+                    data-vv-name="touroPesoMedioKGVivo1"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.touroPesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="tourocabeca1"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.tourocabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('tourocabeca1')"
+                    data-vv-name="tourocabeca1"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="touroValorUnitarioRSCabeca"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnual.touroValorUnitarioRSCabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('touroValorUnitarioRSCabeca')"
+                    data-vv-name="touroValorUnitarioRSCabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+            </v-expansion-panel-content>
+            </v-expansion-panel>
+
+
+
+            <v-expansion-panel v-model="panel[4]" expand class="panel">
+            <v-expansion-panel-content>
+              <template v-slot:header>
+                <h2>Receita Anual (Venda de Animais Para Abate e Outros Produtos) </h2>
+              </template>
+
+              
+              
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas + 36 meses Para Abate</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas36PesoMedioKGVivo"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36PesoMedioKGVivo')"
+                    data-vv-name="femeas36PesoMedioKGVivo"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas36PesoMedioCarcaca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio Carcaça"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36PesoMedioCarcaca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36PesoMedioCarcaca')"
+                    data-vv-name="femeas36PesoMedioCarcaca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                 <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas36cabeca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36cabeca')"
+                    data-vv-name="femeas36cabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas36ValorUnitarioRS"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36ValorUnitarioRS"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas36ValorUnitarioRS')"
+                    data-vv-name="femeas36ValorUnitarioRS"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas 24-36 meses Para Abate</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas2436PesoMedioKGVivo"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436PesoMedioKGVivo')"
+                    data-vv-name="femeas2436PesoMedioKGVivo"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas2436PesoMedioCarcaca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio Carcaça"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436PesoMedioCarcaca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436PesoMedioCarcaca')"
+                    data-vv-name="femeas2436PesoMedioCarcaca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                 <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas2436cabeca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436cabeca')"
+                    data-vv-name="femeas2436cabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas2436ValorUnitarioRS"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436ValorUnitarioRS"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas2436ValorUnitarioRS')"
+                    data-vv-name="femeas2436ValorUnitarioRS"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Fêmeas 12-24 meses Para Abate</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas1224PesoMedioKGVivo"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224PesoMedioKGVivo')"
+                    data-vv-name="femeas1224PesoMedioKGVivo"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas1224PesoMedioCarcaca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio Carcaça"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224PesoMedioCarcaca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224PesoMedioCarcaca')"
+                    data-vv-name="femeas1224PesoMedioCarcaca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas1224cabeca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224cabeca')"
+                    data-vv-name="femeas1224cabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="femeas1224ValorUnitarioRS"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224ValorUnitarioRS"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('femeas1224ValorUnitarioRS')"
+                    data-vv-name="femeas1224ValorUnitarioRS"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+               
+              </v-layout>
+
+
+
+              <div class="divider2">
+                <span>
+                  <b>Machos 12-24 meses Para Abate</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos1224PesoMedioKGVivo"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224PesoMedioKGVivo')"
+                    data-vv-name="machos1224PesoMedioKGVivo"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos1224PesoMedioCarcaca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio Carcaça"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224PesoMedioCarcaca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224PesoMedioCarcaca')"
+                    data-vv-name="machos1224PesoMedioCarcaca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos1224cabeca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224cabeca')"
+                    data-vv-name="machos1224cabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos1224ValorUnitarioRS"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224ValorUnitarioRS"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos1224ValorUnitarioRS')"
+                    data-vv-name="machos1224ValorUnitarioRS"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Machos 24-36 meses Para Abate</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos2436PesoMedioKGVivo"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436PesoMedioKGVivo')"
+                    data-vv-name="machos2436PesoMedioKGVivo"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos2436PesoMedioCarcaca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio Carcaça"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436PesoMedioCarcaca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436PesoMedioCarcaca')"
+                    data-vv-name="machos2436PesoMedioCarcaca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos2436cabeca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436cabeca')"
+                    data-vv-name="machos2436cabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos2436ValorUnitarioRS"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436ValorUnitarioRS"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos2436ValorUnitarioRS')"
+                    data-vv-name="machos2436ValorUnitarioRS"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Machos + 36 meses Iclusive Tourunos Para Abate</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos36PesoMedioKGVivo"
+                    type="number"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36PesoMedioKGVivo')"
+                    data-vv-name="machos36PesoMedioKGVivo"
+                    background-color="white"
+                    label="Peso Medio kg vivo"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36PesoMedioKGVivo"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos36PesoMedioCarcaca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio Carcaça"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36PesoMedioCarcaca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36PesoMedioCarcaca')"
+                    data-vv-name="machos36PesoMedioCarcaca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                 <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos36cabeca"
+                    type="number"
+                    background-color="white"
+                    label="Peso Medio cab."
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36cabeca"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36cabeca')"
+                    data-vv-name="machos36cabeca"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="machos36ValorUnitarioRS"
+                    type="number"
+                    background-color="white"
+                    label="Valor (R$/cab)"
+                    box
+                    v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36ValorUnitarioRS"
+                    v-validate="'required'"
+                    :error-messages="errors.collect('machos36ValorUnitarioRS')"
+                    data-vv-name="machos36ValorUnitarioRS"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                
+              </v-layout>
+
+ <v-btn  class="button" type="submit" color="primary">Visualizar Gráficos !{{form}}</v-btn>
+            </v-expansion-panel-content>
+            </v-expansion-panel>
+
 
           <panel-graficos/>
           
@@ -990,7 +1997,7 @@ export default {
   data: () => ({
     formulario: new Formulario(),
     forme: "",
-    panel: [0, 0, 0]
+    panel: [0, 0, 0, 0, 0]
   }),
 
   updated(){

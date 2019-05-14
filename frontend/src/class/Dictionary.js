@@ -165,7 +165,178 @@ export default class Dictionary{
                 },
                 rebanhoMedioAnualEstimadoUA:{
                   required: () => "O Campo UA não deve ser vazio"
-                }
+                },
+                femeas36PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                femeas2436PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                femeas1224PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                femeas012PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos012PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos1224PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos2436PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos36PesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                touroPesoMedioKGVivo1:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+
+                femeas36cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+
+                femeas2436cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                femeas1224cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                femeas012cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos012cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos1224cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos2436cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos36cabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                tourocabeca1:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+
+
+                femeas36ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                femeas2436ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                femeas1224ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                femeas012ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos012ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos1224ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos2436ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos36ValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                touroValorUnitarioRSCabeca:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+
+
+                femeas36PesoMedioKGVivo:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                femeas2436PesoMedioKGVivo:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                femeas1224PesoMedioKGVivo:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos1224PesoMedioKGVivo:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos2436PesoMedioKGVivo:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+                machos36PesoMedioKGVivo:{
+                  required: () => "O Campo Peso Medio kg vivo não deve ser vazio"
+                },
+
+                femeas36cabeca:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                femeas2436cabeca:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                femeas1224cabeca:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos1224cabeca:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos2436cabeca:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+                machos36cabeca:{
+                  required: () => "O Campo Peso Medio cab. não deve ser vazio"
+                },
+
+
+                femeas36PesoMedioCarcaca:{
+                  required: () => "O Campo Peso Medio Carcaça não deve ser vazio"
+                },
+                femeas2436PesoMedioCarcaca:{
+                  required: () => "O Campo Peso Medio Carcaça não deve ser vazio"
+                },
+                femeas1224PesoMedioCarcaca:{
+                  required: () => "O Campo Peso Medio Carcaça não deve ser vazio"
+                },
+                machos1224PesoMedioCarcaca:{
+                  required: () => "O Campo Peso Medio Carcaça não deve ser vazio"
+                },
+                machos2436PesoMedioCarcaca:{
+                  required: () => "O Campo Peso Medio Carcaça não deve ser vazio"
+                },
+                machos36PesoMedioCarcaca:{
+                  required: () => "O Campo Peso Medio Carcaça não deve ser vazio"
+                },
+
+
+                
+                femeas36ValorUnitarioRS:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                femeas2436ValorUnitarioRS:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                femeas1224ValorUnitarioRS:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos1224ValorUnitarioRS:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos2436ValorUnitarioRS:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                machos36ValorUnitarioRS:{
+                  required: () => "O Campo Valor (R$/cab) não deve ser vazio" 
+                },
+                
+                
+
+
+
+                
 
 
         } 

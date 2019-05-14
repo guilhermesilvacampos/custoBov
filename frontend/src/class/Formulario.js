@@ -1,5 +1,6 @@
 import RebanhoDeReproducao from './RebanhoDeReproducao.js'
 import RebanhoDeRecria from './RebanhoDeRecria.js'
+import DadosDasReceitas from './DadosDasReceitas.js'
 export default class Formulario {
 
     constructor(formulario = '') {
@@ -13,6 +14,7 @@ export default class Formulario {
 
         this.RebanhoDeRecria = new RebanhoDeRecria(formulario.RebanhoDeRecria);
 
+        this.DadosDasReceitas = new DadosDasReceitas(formulario.DadosDasReceitas);
 
         this.rebanhoMedioAnualEstimadoCabeca = formulario.rebanhoMedioAnualEstimadoCabeca;
         this.rebanhoMedioAnualEstimadoUA = formulario.rebanhoMedioAnualEstimadoUA;
