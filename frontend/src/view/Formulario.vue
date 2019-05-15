@@ -2104,7 +2104,14 @@
                   </v-flex>
                 </v-flex>
               </v-layout>
-<v-btn class="button" type="submit" color="primary">Visualizar Gráficos !{{form}}</v-btn>
+              <v-flex md5>
+              <v-flex>
+<v-btn class="button" type="submit" color="success">Visualizar Gráficos !{{form}}</v-btn>
+              </v-flex>
+              <v-flex>
+<v-btn @click="clear" color="primary">clear</v-btn>
+              </v-flex>
+              </v-flex>
              
             </v-expansion-panel-content>
           </v-expansion-panel>
@@ -2173,7 +2180,12 @@ export default {
             });
         }
       });
-    }
+    },
+    clear () {
+      
+        this.formulario = new Formulario()
+        
+      }
   }
 };
 </script>
