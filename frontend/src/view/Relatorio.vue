@@ -11,7 +11,7 @@
 
           <panel-tabela-rebanho-total/>
         
-            <panel-graficos/>
+            <panel-graficos-rebanho/>
       
     </v-content>
   </v-container>
@@ -19,14 +19,14 @@
 <script>
 import Formulario from "../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
-import PanelGraficos from '../components/panel/PanelGraficos.vue'
+import PanelGraficosRebanho from '../components/panel/PanelGraficosRebanho.vue'
 import PanelTabelaRebanhoReproducao from "../components/panel/PanelTabelaRebanhoReproducao.vue"
 import PanelTabelaRebanhoRecriaEngorda from "../components/panel/PanelTabelaRebanhoRecriaEngorda.vue"
 import PanelTabelaRebanhoTotal from "../components/panel/PanelTabelaRebanhoTotal.vue"
 
 export default {
   components: {
-    "panel-graficos": PanelGraficos,
+    "panel-graficos-rebanho": PanelGraficosRebanho,
     "panel-tabela-rebanho-reproducao" : PanelTabelaRebanhoReproducao,
     "panel-tabela-rebanho-recria-engorda" : PanelTabelaRebanhoRecriaEngorda,
     "panel-tabela-rebanho-total" : PanelTabelaRebanhoTotal,

@@ -956,11 +956,15 @@
                     v-model="formulario.rebanhoMedioAnualEstimadoUA"
                   ></v-text-field>
                 </v-flex>
+                
               </v-layout>
+              <v-flex  text-md-center text-sm-center text-xs-center>
+               <v-btn href="#graficos_do_rebanho" color="primary">Ir para Gráficos do Rebanho</v-btn>
+              </v-flex>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
-<v-expansion-panel v-model="panel[3]" expand class="panel">
+          <v-expansion-panel v-model="panel[3]" expand class="panel">
             <v-expansion-panel-content>
               <template v-slot:header>
                 <h2>Dados das Receitas - Pró-Labore</h2>
@@ -1047,9 +1051,9 @@
                   ></v-text-field>
                 </v-flex>
               </v-layout>
+             
             </v-expansion-panel-content>
           </v-expansion-panel>
-
 
           <v-expansion-panel v-model="panel[4]" expand class="panel">
             <v-expansion-panel-content>
@@ -1572,8 +1576,6 @@
             </v-expansion-panel-content>
           </v-expansion-panel>
 
-          
-
           <v-expansion-panel v-model="panel[5]" expand class="panel">
             <v-expansion-panel-content>
               <template v-slot:header>
@@ -2017,8 +2019,6 @@
                   ></v-text-field>
                 </v-flex>
               </v-layout>
-
-              
             </v-expansion-panel-content>
           </v-expansion-panel>
 
@@ -2104,19 +2104,27 @@
                   </v-flex>
                 </v-flex>
               </v-layout>
-              <v-flex md5>
-              <v-flex>
-<v-btn class="button" type="submit" color="success">Visualizar Gráficos{{form}}</v-btn>
-              </v-flex>
-              <v-flex>
-<v-btn @click="clear" color="primary">Limpar</v-btn>
-              </v-flex>
-              </v-flex>
-             
+<v-flex  text-md-center text-sm-center text-xs-center>
+            <v-btn href="#graficos_das_receitas"  color="primary">Ir para Gráficos das Receitas</v-btn>
+</v-flex>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
-          <panel-graficos/>
+          <v-expansion-panel v-model="panel[7]" expand class="panel">
+            <v-expansion-panel-content>
+              <v-layout row wrap>
+              <v-flex md6 text-xs-center>
+                
+                  <v-btn @click="clear" outline color="primary" >Limpar</v-btn>
+              </v-flex>
+              <v-flex md6 text-xs-center>
+                  <v-btn  type="submit" color="success">Carregar Gráficos{{form}}</v-btn>
+                </v-flex>
+              </v-layout>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+
+          <panel-graficos-rebanho id="graficos_do_rebanho"/>
         </v-form>
       </v-content>
     </v-container>
@@ -2125,10 +2133,10 @@
 <script>
 import Formulario from "../class/Formulario.js";
 import Dictionary from "../class/Dictionary.js";
-import PanelGraficos from "../components/panel/PanelGraficos.vue";
+import PanelGraficosRebanho from "../components/panel/PanelGraficosRebanho.vue";
 export default {
   components: {
-    "panel-graficos": PanelGraficos
+    "panel-graficos-rebanho": PanelGraficosRebanho
   },
 
   $_veeValidate: {
@@ -2138,7 +2146,7 @@ export default {
   data: () => ({
     formulario: new Formulario(),
     forme: "",
-    panel: [0, 0, 0, 0, 0, 0, 0]
+    panel: [0, 0, 0, 0, 0, 0, 0,0]
   }),
 
   updated() {
@@ -2176,16 +2184,15 @@ export default {
           db.simulacao
             .put({ id: 1, formularioDB: this.formulario })
             .then(function() {
+               window.location.href = '/#/';
               document.location.reload(true);
             });
         }
       });
     },
-    clear () {
-      
-        this.formulario = new Formulario()
-        
-      }
+    clear() {
+      this.formulario = new Formulario();
+    }
   }
 };
 </script>
