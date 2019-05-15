@@ -2109,7 +2109,7 @@
 <v-btn class="button" type="submit" color="success">Visualizar Gráficos !{{form}}</v-btn>
               </v-flex>
               <v-flex>
-<v-btn @click="clear" color="primary">clear</v-btn>
+<v-btn @click="clear" color="primary">Limpar Campos</v-btn>
               </v-flex>
               </v-flex>
              
