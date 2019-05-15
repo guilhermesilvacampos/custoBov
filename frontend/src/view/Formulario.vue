@@ -55,7 +55,6 @@
               </v-flex>
             </v-expansion-panel-content>
           </v-expansion-panel>
-         
 
           <v-expansion-panel v-model="panel[1]" expand class="panel">
             <v-expansion-panel-content>
@@ -63,7 +62,6 @@
                 <h2>Dados Do Rebanho de Reprodução</h2>
               </template>
 
-              
               <div class="divider2">
                 <span>
                   <b>Touros</b>
@@ -76,7 +74,7 @@
                   <v-text-field
                     name="touroPesoMedio"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('touroPesoMedio')"
                     data-vv-name="touroPesoMedio"
                     background-color="white"
@@ -96,7 +94,7 @@
                     label="Cabeças-Inicial"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroCabecaInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('touroCabecaInicial')"
                     data-vv-name="touroCabecaInicial"
                     required
@@ -112,7 +110,7 @@
                     label="Cabeças-Final"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroCabecaFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('touroCabecaFinal')"
                     data-vv-name="touroCabecaFinal"
                     required
@@ -127,7 +125,7 @@
                     label="Valor R$/cab"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroValor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('touroValor')"
                     data-vv-name="touroValor"
                     required
@@ -148,7 +146,7 @@
                   <v-text-field
                     name="vacaMatrizPesoMedio"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('vacaMatrizPesoMedio')"
                     data-vv-name="vacaMatrizPesoMedio"
                     background-color="white"
@@ -168,7 +166,7 @@
                     label="Cabeças-Inicial"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizCabecaInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('vacaMatrizCabecaInicial')"
                     data-vv-name="vacaMatrizCabecaInicial"
                     required
@@ -184,7 +182,7 @@
                     label="Cabeças-Final"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizCabecaFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('vacaMatrizCabecaFinal')"
                     data-vv-name="vacaMatrizCabecaFinal"
                     required
@@ -200,7 +198,7 @@
                     label="Valor R$/cab"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizValor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('vacaMatrizValor')"
                     data-vv-name="vacaMatrizValor"
                     required
@@ -211,14 +209,12 @@
             </v-expansion-panel-content>
           </v-expansion-panel>
 
-              <v-expansion-panel v-model="panel[2]" expand class="panel">
+          <v-expansion-panel v-model="panel[2]" expand class="panel">
             <v-expansion-panel-content>
               <template v-slot:header>
                 <h2>Dados Do Rebanho de Recria</h2>
               </template>
 
-              
-              
               <div class="divider2">
                 <span>
                   <b>Fêmeas + 36 meses</b>
@@ -231,7 +227,7 @@
                   <v-text-field
                     name="femeas36PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36PesoInicial')"
                     data-vv-name="femeas36PesoInicial"
                     background-color="white"
@@ -251,7 +247,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36PesoFinal')"
                     data-vv-name="femeas36PesoFinal"
                     required
@@ -267,7 +263,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36Valor')"
                     data-vv-name="femeas36Valor"
                     required
@@ -283,7 +279,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36CabecasInicial')"
                     data-vv-name="femeas36CabecasInicial"
                     required
@@ -299,7 +295,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36CabecasFinal')"
                     data-vv-name="femeas36CabecasFinal"
                     required
@@ -320,7 +316,7 @@
                   <v-text-field
                     name="femeas2436PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436PesoInicial')"
                     data-vv-name="femeas2436PesoInicial"
                     background-color="white"
@@ -340,7 +336,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436PesoFinal')"
                     data-vv-name="femeas2436PesoFinal"
                     required
@@ -356,7 +352,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436Valor')"
                     data-vv-name="femeas2436Valor"
                     required
@@ -372,7 +368,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436CabecasInicial')"
                     data-vv-name="femeas2436CabecasInicial"
                     required
@@ -388,7 +384,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas2436CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436CabecasFinal')"
                     data-vv-name="femeas2436CabecasFinal"
                     required
@@ -409,7 +405,7 @@
                   <v-text-field
                     name="femeas1224PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224PesoInicial')"
                     data-vv-name="femeas1224PesoInicial"
                     background-color="white"
@@ -429,7 +425,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224PesoFinal')"
                     data-vv-name="femeas1224PesoFinal"
                     required
@@ -445,7 +441,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224Valor')"
                     data-vv-name="femeas1224Valor"
                     required
@@ -461,7 +457,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224CabecasInicial')"
                     data-vv-name="femeas1224CabecasInicial"
                     required
@@ -477,7 +473,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas1224CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224CabecasFinal')"
                     data-vv-name="femeas1224CabecasFinal"
                     required
@@ -498,7 +494,7 @@
                   <v-text-field
                     name="femeas012PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012PesoInicial')"
                     data-vv-name="femeas012PesoInicial"
                     background-color="white"
@@ -518,7 +514,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012PesoFinal')"
                     data-vv-name="femeas012PesoFinal"
                     required
@@ -534,7 +530,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012Valor')"
                     data-vv-name="femeas012Valor"
                     required
@@ -550,7 +546,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012CabecasInicial')"
                     data-vv-name="femeas012CabecasInicial"
                     required
@@ -566,7 +562,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas012CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012CabecasFinal')"
                     data-vv-name="femeas012CabecasFinal"
                     required
@@ -587,7 +583,7 @@
                   <v-text-field
                     name="machos012PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012PesoInicial')"
                     data-vv-name="machos012PesoInicial"
                     background-color="white"
@@ -607,7 +603,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012PesoFinal')"
                     data-vv-name="machos012PesoFinal"
                     required
@@ -623,7 +619,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012Valor')"
                     data-vv-name="machos012Valor"
                     required
@@ -639,7 +635,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012CabecasInicial')"
                     data-vv-name="machos012CabecasInicial"
                     required
@@ -655,7 +651,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos012CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012CabecasFinal')"
                     data-vv-name="machos012CabecasFinal"
                     required
@@ -676,7 +672,7 @@
                   <v-text-field
                     name="machos1224PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224PesoInicial')"
                     data-vv-name="machos1224PesoInicial"
                     background-color="white"
@@ -696,7 +692,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224PesoFinal')"
                     data-vv-name="machos1224PesoFinal"
                     required
@@ -712,7 +708,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224Valor')"
                     data-vv-name="machos1224Valor"
                     required
@@ -728,7 +724,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224CabecasInicial')"
                     data-vv-name="machos1224CabecasInicial"
                     required
@@ -744,7 +740,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos1224CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224CabecasFinal')"
                     data-vv-name="machos1224CabecasFinal"
                     required
@@ -765,7 +761,7 @@
                   <v-text-field
                     name="machos2436PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436PesoInicial')"
                     data-vv-name="machos2436PesoInicial"
                     background-color="white"
@@ -785,7 +781,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436PesoFinal')"
                     data-vv-name="machos2436PesoFinal"
                     required
@@ -801,7 +797,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436Valor')"
                     data-vv-name="machos2436Valor"
                     required
@@ -817,7 +813,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436CabecasInicial')"
                     data-vv-name="machos2436CabecasInicial"
                     required
@@ -833,7 +829,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos2436CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436CabecasFinal')"
                     data-vv-name="machos2436CabecasFinal"
                     required
@@ -854,7 +850,7 @@
                   <v-text-field
                     name="machos36PesoInicial"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36PesoInicial')"
                     data-vv-name="machos36PesoInicial"
                     background-color="white"
@@ -874,7 +870,7 @@
                     label="Peso(kg/cab)Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36PesoFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36PesoFinal')"
                     data-vv-name="machos36PesoFinal"
                     required
@@ -890,7 +886,7 @@
                     label="Valor R$/Kg"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36Valor"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36Valor')"
                     data-vv-name="machos36Valor"
                     required
@@ -906,7 +902,7 @@
                     label="Cabecas-Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36CabecasInicial"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36CabecasInicial')"
                     data-vv-name="machos36CabecasInicial"
                     required
@@ -922,7 +918,7 @@
                     label="Cabecas-Final"
                     box
                     v-model="formulario.RebanhoDeRecria.machos36CabecasFinal"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36CabecasFinal')"
                     data-vv-name="machos36CabecasFinal"
                     required
@@ -947,7 +943,6 @@
                     label="Cabeças"
                     box
                     v-model="formulario.rebanhoMedioAnualEstimadoCabeca"
-                    
                   ></v-text-field>
                 </v-flex>
 
@@ -962,20 +957,106 @@
                   ></v-text-field>
                 </v-flex>
               </v-layout>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
 
-             
+<v-expansion-panel v-model="panel[3]" expand class="panel">
+            <v-expansion-panel-content>
+              <template v-slot:header>
+                <h2>Dados das Receitas - Pró-Labore</h2>
+              </template>
+
+              <div class="divider2">
+                <span>
+                  <b>Retirada do Produtor</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="retiradaDoProdutorMes"
+                    type="number"
+                    v-validate="'required|max:8'"
+                    :error-messages="errors.collect('retiradaDoProdutorMes')"
+                    data-vv-name="retiradaDoProdutorMes"
+                    background-color="white"
+                    label="R$/Mês"
+                    box
+                    v-model="formulario.DadosDasReceitas.retiradaDoProdutorMes"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="retiradaDoProdutorDedicacaoBovinocultura"
+                    type="number"
+                    background-color="white"
+                    label="Dedicação à Bovinocultura %"
+                    box
+                    v-model="formulario.DadosDasReceitas.retiradaDoProdutorDedicacaoBovinocultura"
+                    v-validate="'required|max:8'"
+                    :error-messages="errors.collect('retiradaDoProdutorDedicacaoBovinocultura')"
+                    data-vv-name="retiradaDoProdutorDedicacaoBovinocultura"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+              </v-layout>
+
+              <div class="divider2">
+                <span>
+                  <b>Retirada de Outro Membro da Família</b>
+                </span>
+              </div>
+              <v-divider></v-divider>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex xs6 sm6 md2>
+                  <v-text-field
+                    name="retiradaFamiliaMes"
+                    type="number"
+                    v-validate="'required|max:8'"
+                    :error-messages="errors.collect('retiradaFamiliaMes')"
+                    data-vv-name="retiradaFamiliaMes"
+                    background-color="white"
+                    label="R$/Mês"
+                    box
+                    v-model="formulario.DadosDasReceitas.retiradaFamiliaMes"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+
+                <v-flex xs6 sm6 md3>
+                  <v-text-field
+                    name="retiradaFamiliaDedicacaoBovinocultura"
+                    type="number"
+                    background-color="white"
+                    label="Dedicação à Bovinocultura %"
+                    box
+                    v-model="formulario.DadosDasReceitas.retiradaFamiliaDedicacaoBovinocultura"
+                    v-validate="'required|max:8'"
+                    :error-messages="errors.collect('retiradaFamiliaDedicacaoBovinocultura')"
+                    data-vv-name="retiradaFamiliaDedicacaoBovinocultura"
+                    required
+                    lazy-validation
+                  ></v-text-field>
+                </v-flex>
+              </v-layout>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
 
-            <v-expansion-panel v-model="panel[3]" expand class="panel">
+          <v-expansion-panel v-model="panel[4]" expand class="panel">
             <v-expansion-panel-content>
               <template v-slot:header>
-                <h2>Receita Anual (Venda de Animais e Outros Produtos) </h2>
+                <h2>Dados das Receitas - Bovinos Para Outros Destinos</h2>
               </template>
 
-              
-              
               <div class="divider2">
                 <span>
                   <b>Fêmeas + 36 meses</b>
@@ -988,7 +1069,7 @@
                   <v-text-field
                     name="femeas36PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36PesoMedioKGVivo1')"
                     data-vv-name="femeas36PesoMedioKGVivo1"
                     background-color="white"
@@ -1008,7 +1089,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas36cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36cabeca1')"
                     data-vv-name="femeas36cabeca1"
                     required
@@ -1024,14 +1105,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas36ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36ValorUnitarioRSCabeca')"
                     data-vv-name="femeas36ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
               </v-layout>
 
               <div class="divider2">
@@ -1046,7 +1126,7 @@
                   <v-text-field
                     name="femeas2436PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436PesoMedioKGVivo1')"
                     data-vv-name="femeas2436PesoMedioKGVivo1"
                     background-color="white"
@@ -1066,7 +1146,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas2436cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436cabeca1')"
                     data-vv-name="femeas2436cabeca1"
                     required
@@ -1082,14 +1162,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas2436ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436ValorUnitarioRSCabeca')"
                     data-vv-name="femeas2436ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
               </v-layout>
 
               <div class="divider2">
@@ -1104,7 +1183,7 @@
                   <v-text-field
                     name="femeas1224PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224PesoMedioKGVivo1')"
                     data-vv-name="femeas1224PesoMedioKGVivo1"
                     background-color="white"
@@ -1124,7 +1203,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas1224cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224cabeca1')"
                     data-vv-name="femeas1224cabeca1"
                     required
@@ -1140,15 +1219,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas1224ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224ValorUnitarioRSCabeca')"
                     data-vv-name="femeas1224ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-               
               </v-layout>
 
               <div class="divider2">
@@ -1163,7 +1240,7 @@
                   <v-text-field
                     name="femeas012PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012PesoMedioKGVivo1')"
                     data-vv-name="femeas012PesoMedioKGVivo1"
                     background-color="white"
@@ -1183,7 +1260,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas012cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012cabeca1')"
                     data-vv-name="femeas012cabeca1"
                     required
@@ -1199,15 +1276,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas012ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas012ValorUnitarioRSCabeca')"
                     data-vv-name="femeas012ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-               
               </v-layout>
 
               <div class="divider2">
@@ -1222,7 +1297,7 @@
                   <v-text-field
                     name="machos012PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012PesoMedioKGVivo1')"
                     data-vv-name="machos012PesoMedioKGVivo1"
                     background-color="white"
@@ -1242,7 +1317,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos012cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012cabeca1')"
                     data-vv-name="machos012cabeca1"
                     required
@@ -1258,15 +1333,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos012ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos012ValorUnitarioRSCabeca')"
                     data-vv-name="machos012ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
               <div class="divider2">
@@ -1281,7 +1354,7 @@
                   <v-text-field
                     name="machos1224PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224PesoMedioKGVivo1')"
                     data-vv-name="machos1224PesoMedioKGVivo1"
                     background-color="white"
@@ -1301,7 +1374,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos1224cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224cabeca1')"
                     data-vv-name="machos1224cabeca1"
                     required
@@ -1317,15 +1390,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos1224ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224ValorUnitarioRSCabeca')"
                     data-vv-name="machos1224ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
               <div class="divider2">
@@ -1340,7 +1411,7 @@
                   <v-text-field
                     name="machos2436PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436PesoMedioKGVivo1')"
                     data-vv-name="machos2436PesoMedioKGVivo1"
                     background-color="white"
@@ -1360,7 +1431,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos2436cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436cabeca1')"
                     data-vv-name="machos2436cabeca1"
                     required
@@ -1376,15 +1447,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos2436ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436ValorUnitarioRSCabeca')"
                     data-vv-name="machos2436ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
               <div class="divider2">
@@ -1399,7 +1468,7 @@
                   <v-text-field
                     name="machos36PesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36PesoMedioKGVivo1')"
                     data-vv-name="machos36PesoMedioKGVivo1"
                     background-color="white"
@@ -1419,7 +1488,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos36cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36cabeca1')"
                     data-vv-name="machos36cabeca1"
                     required
@@ -1435,20 +1504,18 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos36ValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36ValorUnitarioRSCabeca')"
                     data-vv-name="machos36ValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
               <div class="divider2">
                 <span>
-                  <b>Touros </b>
+                  <b>Touros</b>
                 </span>
               </div>
               <v-divider></v-divider>
@@ -1458,7 +1525,7 @@
                   <v-text-field
                     name="touroPesoMedioKGVivo1"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('touroPesoMedioKGVivo1')"
                     data-vv-name="touroPesoMedioKGVivo1"
                     background-color="white"
@@ -1478,7 +1545,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.tourocabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('tourocabeca1')"
                     data-vv-name="tourocabeca1"
                     required
@@ -1494,30 +1561,25 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.touroValorUnitarioRSCabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('touroValorUnitarioRSCabeca')"
                     data-vv-name="touroValorUnitarioRSCabeca"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
-
             </v-expansion-panel-content>
-            </v-expansion-panel>
+          </v-expansion-panel>
 
+          
 
-
-            <v-expansion-panel v-model="panel[4]" expand class="panel">
+          <v-expansion-panel v-model="panel[5]" expand class="panel">
             <v-expansion-panel-content>
               <template v-slot:header>
-                <h2>Receita Anual (Venda de Animais Para Abate e Outros Produtos) </h2>
+                <h2>Dados das Receitas - Bovinos Para Abate e Consumo Próprio</h2>
               </template>
 
-              
-              
               <div class="divider2">
                 <span>
                   <b>Fêmeas + 36 meses Para Abate</b>
@@ -1530,7 +1592,7 @@
                   <v-text-field
                     name="femeas36PesoMedioKGVivo"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36PesoMedioKGVivo')"
                     data-vv-name="femeas36PesoMedioKGVivo"
                     background-color="white"
@@ -1550,7 +1612,7 @@
                     label="Peso Medio Carcaça"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36PesoMedioCarcaca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36PesoMedioCarcaca')"
                     data-vv-name="femeas36PesoMedioCarcaca"
                     required
@@ -1558,7 +1620,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                 <v-flex xs6 sm6 md2>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="femeas36cabeca"
                     type="number"
@@ -1566,7 +1628,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36cabeca')"
                     data-vv-name="femeas36cabeca"
                     required
@@ -1582,14 +1644,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36ValorUnitarioRS"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas36ValorUnitarioRS')"
                     data-vv-name="femeas36ValorUnitarioRS"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
               </v-layout>
 
               <div class="divider2">
@@ -1604,7 +1665,7 @@
                   <v-text-field
                     name="femeas2436PesoMedioKGVivo"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436PesoMedioKGVivo')"
                     data-vv-name="femeas2436PesoMedioKGVivo"
                     background-color="white"
@@ -1624,7 +1685,7 @@
                     label="Peso Medio Carcaça"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436PesoMedioCarcaca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436PesoMedioCarcaca')"
                     data-vv-name="femeas2436PesoMedioCarcaca"
                     required
@@ -1632,7 +1693,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                 <v-flex xs6 sm6 md2>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="femeas2436cabeca"
                     type="number"
@@ -1640,7 +1701,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436cabeca')"
                     data-vv-name="femeas2436cabeca"
                     required
@@ -1656,14 +1717,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436ValorUnitarioRS"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas2436ValorUnitarioRS')"
                     data-vv-name="femeas2436ValorUnitarioRS"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
               </v-layout>
 
               <div class="divider2">
@@ -1678,7 +1738,7 @@
                   <v-text-field
                     name="femeas1224PesoMedioKGVivo"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224PesoMedioKGVivo')"
                     data-vv-name="femeas1224PesoMedioKGVivo"
                     background-color="white"
@@ -1698,7 +1758,7 @@
                     label="Peso Medio Carcaça"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224PesoMedioCarcaca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224PesoMedioCarcaca')"
                     data-vv-name="femeas1224PesoMedioCarcaca"
                     required
@@ -1714,7 +1774,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224cabeca')"
                     data-vv-name="femeas1224cabeca"
                     required
@@ -1730,18 +1790,14 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224ValorUnitarioRS"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('femeas1224ValorUnitarioRS')"
                     data-vv-name="femeas1224ValorUnitarioRS"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-               
               </v-layout>
-
-
 
               <div class="divider2">
                 <span>
@@ -1755,7 +1811,7 @@
                   <v-text-field
                     name="machos1224PesoMedioKGVivo"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224PesoMedioKGVivo')"
                     data-vv-name="machos1224PesoMedioKGVivo"
                     background-color="white"
@@ -1775,7 +1831,7 @@
                     label="Peso Medio Carcaça"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224PesoMedioCarcaca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224PesoMedioCarcaca')"
                     data-vv-name="machos1224PesoMedioCarcaca"
                     required
@@ -1791,7 +1847,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224cabeca')"
                     data-vv-name="machos1224cabeca"
                     required
@@ -1807,15 +1863,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224ValorUnitarioRS"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos1224ValorUnitarioRS')"
                     data-vv-name="machos1224ValorUnitarioRS"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
               <div class="divider2">
@@ -1830,7 +1884,7 @@
                   <v-text-field
                     name="machos2436PesoMedioKGVivo"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436PesoMedioKGVivo')"
                     data-vv-name="machos2436PesoMedioKGVivo"
                     background-color="white"
@@ -1850,7 +1904,7 @@
                     label="Peso Medio Carcaça"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436PesoMedioCarcaca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436PesoMedioCarcaca')"
                     data-vv-name="machos2436PesoMedioCarcaca"
                     required
@@ -1858,7 +1912,6 @@
                   ></v-text-field>
                 </v-flex>
 
-                
                 <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="machos2436cabeca"
@@ -1867,7 +1920,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436cabeca')"
                     data-vv-name="machos2436cabeca"
                     required
@@ -1883,15 +1936,13 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436ValorUnitarioRS"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos2436ValorUnitarioRS')"
                     data-vv-name="machos2436ValorUnitarioRS"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
               <div class="divider2">
@@ -1906,7 +1957,7 @@
                   <v-text-field
                     name="machos36PesoMedioKGVivo"
                     type="number"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36PesoMedioKGVivo')"
                     data-vv-name="machos36PesoMedioKGVivo"
                     background-color="white"
@@ -1926,7 +1977,7 @@
                     label="Peso Medio Carcaça"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36PesoMedioCarcaca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36PesoMedioCarcaca')"
                     data-vv-name="machos36PesoMedioCarcaca"
                     required
@@ -1934,7 +1985,7 @@
                   ></v-text-field>
                 </v-flex>
 
-                 <v-flex xs6 sm6 md2>
+                <v-flex xs6 sm6 md2>
                   <v-text-field
                     name="machos36cabeca"
                     type="number"
@@ -1942,7 +1993,7 @@
                     label="Peso Medio cab."
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36cabeca"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36cabeca')"
                     data-vv-name="machos36cabeca"
                     required
@@ -1958,24 +2009,107 @@
                     label="Valor (R$/cab)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36ValorUnitarioRS"
-                    v-validate="'required'"
+                    v-validate="'required|max:8'"
                     :error-messages="errors.collect('machos36ValorUnitarioRS')"
                     data-vv-name="machos36ValorUnitarioRS"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                
               </v-layout>
 
- <v-btn  class="button" type="submit" color="primary">Visualizar Gráficos !{{form}}</v-btn>
+              
             </v-expansion-panel-content>
-            </v-expansion-panel>
+          </v-expansion-panel>
 
+          <v-expansion-panel v-model="panel[6]" expand class="panel">
+            <v-expansion-panel-content>
+              <template v-slot:header>
+                <h2>Outras Receitas</h2>
+              </template>
+
+              <v-layout align-center justify-center row wrap>
+                <v-flex md4>
+                  <div class="divider2">
+                    <span>
+                      <b>Outros Produtos</b>
+                    </span>
+                  </div>
+                  <v-divider></v-divider>
+
+                  <v-flex xs8 sm8 md4>
+                    <v-text-field
+                      name="vendaProdutosBovinoculturaCorteValorTotal"
+                      type="number"
+                      v-validate="'required|max:8'"
+                      :error-messages="errors.collect('vendaProdutosBovinoculturaCorteValorTotal')"
+                      data-vv-name="vendaProdutosBovinoculturaCorteValorTotal"
+                      background-color="white"
+                      label="R$"
+                      box
+                      v-model="formulario.DadosDasReceitas.vendaProdutosBovinoculturaCorteValorTotal"
+                      required
+                      lazy-validation
+                    ></v-text-field>
+                  </v-flex>
+                </v-flex>
+
+                <v-flex md4>
+                  <div class="divider2">
+                    <span>
+                      <b>Aluguel de Pasto</b>
+                    </span>
+                  </div>
+                  <v-divider></v-divider>
+
+                  <v-flex xs8 sm8 md4>
+                    <v-text-field
+                      name="receitaAluguelPastoValorTotal"
+                      type="number"
+                      v-validate="'required|max:8'"
+                      :error-messages="errors.collect('receitaAluguelPastoValorTotal')"
+                      data-vv-name="receitaAluguelPastoValorTotal"
+                      background-color="white"
+                      label="R$"
+                      box
+                      v-model="formulario.DadosDasReceitas.receitaAluguelPastoValorTotal"
+                      required
+                      lazy-validation
+                    ></v-text-field>
+                  </v-flex>
+                </v-flex>
+
+                <v-flex md4>
+                  <div class="divider2">
+                    <span>
+                      <b>Preço do Boi Gordo</b>
+                    </span>
+                  </div>
+                  <v-divider></v-divider>
+
+                  <v-flex xs8 sm8 md4>
+                    <v-text-field
+                      name="precoArrobaBoiGordo"
+                      type="number"
+                      v-validate="'required|max:8'"
+                      :error-messages="errors.collect('precoArrobaBoiGordo')"
+                      data-vv-name="precoArrobaBoiGordo"
+                      background-color="white"
+                      label="R$/@"
+                      box
+                      v-model="formulario.DadosDasReceitas.precoArrobaBoiGordo"
+                      required
+                      lazy-validation
+                    ></v-text-field>
+                  </v-flex>
+                </v-flex>
+              </v-layout>
+<v-btn class="button" type="submit" color="primary">Visualizar Gráficos !{{form}}</v-btn>
+             
+            </v-expansion-panel-content>
+          </v-expansion-panel>
 
           <panel-graficos/>
-          
         </v-form>
       </v-content>
     </v-container>
@@ -1984,10 +2118,10 @@
 <script>
 import Formulario from "../class/Formulario.js";
 import Dictionary from "../class/Dictionary.js";
-import PanelGraficos from '../components/panel/PanelGraficos.vue'
+import PanelGraficos from "../components/panel/PanelGraficos.vue";
 export default {
-  components:{
-"panel-graficos": PanelGraficos,
+  components: {
+    "panel-graficos": PanelGraficos
   },
 
   $_veeValidate: {
@@ -1997,13 +2131,12 @@ export default {
   data: () => ({
     formulario: new Formulario(),
     forme: "",
-    panel: [0, 0, 0, 0, 0]
+    panel: [0, 0, 0, 0, 0, 0, 0]
   }),
 
-  updated(){
-console.log("update");
+  updated() {
+    console.log("update");
   },
-
 
   computed: {
     form: function() {
@@ -2036,8 +2169,8 @@ console.log("update");
           db.simulacao
             .put({ id: 1, formularioDB: this.formulario })
             .then(function() {
-             document.location.reload(true);
-            })
+              document.location.reload(true);
+            });
         }
       });
     }
@@ -2046,7 +2179,7 @@ console.log("update");
 </script>
 <style scoped>
 @media screen and (max-width: 991px) {
-h2{
+  h2 {
     color: #00695c;
   }
   .container {
@@ -2062,6 +2195,8 @@ h2{
 
   .panel {
     margin-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
     padding-bottom: 1%;
     background-color: white;
     box-shadow: 0 4px 15px black;
@@ -2096,7 +2231,7 @@ h2{
 }
 
 @media screen and (min-width: 992px) {
-  h2{
+  h2 {
     color: #00695c;
   }
   .container {
@@ -2116,7 +2251,7 @@ h2{
     background-color: white;
     box-shadow: 0 4px 10px black;
   }
-  
+
   .flex {
     margin-left: auto;
     margin-right: auto;
