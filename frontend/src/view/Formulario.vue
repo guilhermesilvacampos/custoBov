@@ -2106,10 +2106,10 @@
               </v-layout>
               <v-flex md5>
               <v-flex>
-<v-btn class="button" type="submit" color="success">Visualizar Gráficos !{{form}}</v-btn>
+<v-btn class="button" type="submit" color="success">Visualizar Gráficos{{form}}</v-btn>
               </v-flex>
               <v-flex>
-<v-btn @click="clear" color="primary">Limpar Campos</v-btn>
+<v-btn @click="clear" color="primary">Limpar</v-btn>
               </v-flex>
               </v-flex>
              
