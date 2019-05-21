@@ -2125,6 +2125,8 @@
           </v-expansion-panel>
 
           <panel-graficos-rebanho id="graficos_do_rebanho"/>
+
+          <panel-graficos-receita id="graficos_das_receitas"/>
         </v-form>
       </v-content>
     </v-container>
@@ -2134,9 +2136,11 @@
 import Formulario from "../class/Formulario.js";
 import Dictionary from "../class/Dictionary.js";
 import PanelGraficosRebanho from "../components/panel/PanelGraficosRebanho.vue";
+import PanelGraficosReceita from "../components/panel/PanelGraficosReceita.vue";
 export default {
   components: {
-    "panel-graficos-rebanho": PanelGraficosRebanho
+    "panel-graficos-rebanho": PanelGraficosRebanho,
+    "panel-graficos-receita": PanelGraficosReceita,
   },
 
   $_veeValidate: {
