@@ -38,7 +38,7 @@ export default {
 
 
   
-  mounted() {
+  beforeCreate() {
     var db = new Dexie("simulacao");
     db.version(1).stores({
       simulacao: "id,formularioDB"
