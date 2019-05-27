@@ -16,8 +16,8 @@ export default {
     legend:{
       position:'top'
     },
-    colors :["#BF343F","#A7E4F2", "#32736C", "#D9B504","#F2811D","#BFBFBF","#A63C76","#128BA6","#F279A6","#590222"],
-    labels: ["Touros", "Vacas", "F 36+", "F 24-36","F 12-24","F 0-12", "M 012", "M 12-24", "M 24-36","M 36+"],
+    colors :["#BF343F","#A7E4F2", "#32736C", "#D9B504","#F2811D","#BFBFBF","#A63C76","#128BA6","#F279A6","#590222", "#BFBFBF","#D9B504","#F2811D","#A7E4F2","#128BA6"],
+    labels: ["F 36+ Abate", "F 36+", "F 24-36 Abate","F 24-36","F 12-24 Abate", "F 12-24", "F 0-12", "M 0-12 ","M 12-24", "M 12-24 Abate", "M 24-36", "M 24-36 Abate", "M 36+", "M 36+ Abate", "Touros"],
     dataLabels: {
        
     enabled: true,
@@ -27,7 +27,7 @@ export default {
     },
     
   },
-      series:  [0,0, 0,0,0,0,0,0,0,0],
+      series:  [0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0],
       largura:'100%',
       comprimento: '200%',
       formulario: ''
@@ -50,34 +50,38 @@ export default {
 
         
 
-          var biblioteca= [BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
-BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria)
-
-          ]
-            
-
           
 
           
+
+          console.log(form.DadosDasReceitas.ReceitaAnualAbate);
+          console.log(form.DadosDasReceitas.ReceitaAnual);
        
 
-        return biblioteca;  
+        return BibliotecaDeCalculos.RebanhoDeVenda(form.DadosDasReceitas.ReceitaAnualAbate,form.DadosDasReceitas.ReceitaAnual);  
       })
       .then(
         g => (
           
           //recria/ engorda
-          this.series[0] = g[0].totalCabecaTouro(),
-          this.series[1] = g[0].totalCabecaVaca(),
+          this.series[0] = g.calculaValorTotalFemeas36Abate(),
+          this.series[1] = g.calculaValorTotalFemeas36(),
 
-          this.series[2] = g[1].qtdCabecaFemeas36(),
-          this.series[3] = g[1].qtdCabecaFemeas2436(),
-          this.series[4] = g[1].qtdCabecaFemeas1224(),
-          this.series[5] = g[1].qtdCabecaFemeas012(),
-          this.series[6] = g[1].qtdCabecaMachos012(),
-          this.series[7] = g[1].qtdCabecaMachos1224(),
-          this.series[8] = g[1].qtdCabecaMachos2436(),
-          this.series[9] = g[1].qtdCabecaMachos36()
+          this.series[2] = g.calculaValorTotalFemeas2436Abate(),
+          this.series[3] = g.calculaValorTotalFemeas2436(),
+          this.series[4] = g.calculaValorTotalFemeas1224Abate(),
+          this.series[5] = g.calculaValorTotalFemeas1224(),
+          this.series[6] = g.calculaValorTotalFemeas012(),
+          this.series[7] = g.calculaValorTotalMachos012(),
+          this.series[8] = g.calculaValorTotalMachos1224(),
+          this.series[9] = g.calculaValorTotalMachos1224Abate(),
+          this.series[10] = g.calculaValorTotalMachos2436(),
+          this.series[11] = g.calculaValorTotalMachos2436Abate(),
+          this.series[12] = g.calculaValorTotalMachos36(),
+          this.series[13] = g.calculaValorTotalMachos36Abate(),
+          this.series[14] = g.calculaValorTotalTouros(),
+          console.log(g)
+
 
 
           

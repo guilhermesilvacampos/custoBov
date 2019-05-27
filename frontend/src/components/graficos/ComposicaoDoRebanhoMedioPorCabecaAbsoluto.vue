@@ -70,14 +70,14 @@ BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria)
           this.series[0] = g[0].totalCabecaTouro(),
           this.series[1] = g[0].totalCabecaVaca(),
 
-          this.series[2] = g[1].qtdCabecaFemeas36(),
-          this.series[3] = g[1].qtdCabecaFemeas2436(),
-          this.series[4] = g[1].qtdCabecaFemeas1224(),
-          this.series[5] = g[1].qtdCabecaFemeas012(),
-          this.series[6] = g[1].qtdCabecaMachos012(),
-          this.series[7] = g[1].qtdCabecaMachos1224(),
-          this.series[8] = g[1].qtdCabecaMachos2436(),
-          this.series[9] = g[1].qtdCabecaMachos36()
+          this.series[2] = g[1].qntCabecaFemeas36(),
+          this.series[3] = g[1].qntCabecaFemeas2436(),
+          this.series[4] = g[1].qntCabecaFemeas1224(),
+          this.series[5] = g[1].qntCabecaFemeas012(),
+          this.series[6] = g[1].qntCabecaMachos012(),
+          this.series[7] = g[1].qntCabecaMachos1224(),
+          this.series[8] = g[1].qntCabecaMachos2436(),
+          this.series[9] = g[1].qntCabecaMachos36()
 
 
           

@@ -122,7 +122,7 @@
                     name="touroValor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/cab"
+                    label="Valor R$/@"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroValor"
                     v-validate="'required|max:8'"
@@ -195,7 +195,7 @@
                     name="vacaMatrizValor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/cab"
+                    label="Valor R$/@"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizValor"
                     v-validate="'required|max:8'"
@@ -1106,7 +1106,7 @@
                     name="femeas36ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas36ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1163,7 +1163,7 @@
                     name="femeas2436ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas2436ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1220,7 +1220,7 @@
                     name="femeas1224ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas1224ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1277,7 +1277,7 @@
                     name="femeas012ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.femeas012ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1334,7 +1334,7 @@
                     name="machos012ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos012ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1391,7 +1391,7 @@
                     name="machos1224ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos1224ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1448,7 +1448,7 @@
                     name="machos2436ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos2436ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1505,7 +1505,7 @@
                     name="machos36ValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.machos36ValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1562,7 +1562,7 @@
                     name="touroValorUnitarioRSCabeca"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/cab.)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnual.touroValorUnitarioRSCabeca"
                     v-validate="'required|max:8'"
@@ -1643,7 +1643,7 @@
                     name="femeas36ValorUnitarioRS"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/@)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas36ValorUnitarioRS"
                     v-validate="'required|max:8'"
@@ -1716,7 +1716,7 @@
                     name="femeas2436ValorUnitarioRS"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/@)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas2436ValorUnitarioRS"
                     v-validate="'required|max:8'"
@@ -1789,7 +1789,7 @@
                     name="femeas1224ValorUnitarioRS"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/@)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.femeas1224ValorUnitarioRS"
                     v-validate="'required|max:8'"
@@ -1862,7 +1862,7 @@
                     name="machos1224ValorUnitarioRS"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/@)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos1224ValorUnitarioRS"
                     v-validate="'required|max:8'"
@@ -1935,7 +1935,7 @@
                     name="machos2436ValorUnitarioRS"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/@)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos2436ValorUnitarioRS"
                     v-validate="'required|max:8'"
@@ -2008,7 +2008,7 @@
                     name="machos36ValorUnitarioRS"
                     type="number"
                     background-color="white"
-                    label="Valor (R$/cab)"
+                    label="Valor (R$/@)"
                     box
                     v-model="formulario.DadosDasReceitas.ReceitaAnualAbate.machos36ValorUnitarioRS"
                     v-validate="'required|max:8'"

@@ -16,9 +16,9 @@ export default {
     legend:{
       position:'top'
     },
-    colors :["#BF343F","#A7E4F2", "#32736C", "#D9B504","#F2811D","#BFBFBF","#A63C76","#128BA6","#F279A6","#590222"],
-    labels: ["Touros", "Vacas", "F 36+", "F 24-36","F 12-24","F 0-12", "M 012", "M 12-24", "M 24-36","M 36+"],
-    dataLabels: {
+   colors :["#BF343F","#A7E4F2", "#32736C", "#D9B504","#F2811D","#BFBFBF","#A63C76","#128BA6","#F279A6","#590222", "#BFBFBF","#D9B504","#F2811D","#A7E4F2","#128BA6"],
+    labels: ["F 36+ Abate", "F 36+", "F 24-36 Abate","F 24-36","F 12-24 Abate", "F 12-24", "F 0-12", "M 0-12 ","M 12-24", "M 12-24 Abate", "M 24-36", "M 24-36 Abate", "M 36+", "M 36+ Abate", "Touros"],
+   dataLabels: {
        
     enabled: true,
     formatter: function (val) {
@@ -27,7 +27,7 @@ export default {
     },
     
   },
-      series:  [0,0, 0,0,0,0,0,0,0,0],
+      series:  [0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0],
       largura:'100%',
       comprimento: '200%',
       formulario: ''
@@ -49,39 +49,32 @@ export default {
       .then(f => (this.formulario = new Formulario(f.formularioDB)))
       .then(function(form) {
         
+    
 
-        
-
-          var biblioteca= [
-BibliotecaDeCalculos.RebanhoTotal(
-            BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
-            BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria))
-
-          ]
-            
-
-          
-
-          
-       
-
-        return biblioteca;  
+        return BibliotecaDeCalculos.RebanhoDeVenda(form.DadosDasReceitas.ReceitaAnualAbate,form.DadosDasReceitas.ReceitaAnual);  
       })
       .then(
         g => (
           
           //recria/ engorda
-          this.series[0] = g[0].composicaoCabecaTouro(),
-          this.series[1] = g[0].composicaoCabecaVaca(),
+          this.series[0] = g.calculaPorcentagemVendasFemeas36Abate(),
+          this.series[1] = g.calculaPorcentagemVendasFemeas36(),
 
-          this.series[2] = g[0].composicaoCabecaFemeas36(),
-          this.series[3] = g[0].composicaoCabecaFemeas2436(),
-          this.series[4] = g[0].composicaoCabecaFemeas1224(),
-          this.series[5] = g[0].composicaoCabecaFemeas012(),
-          this.series[6] = g[0].composicaoCabecaMachos012(),
-          this.series[7] = g[0].composicaoCabecaMachos1224(),
-          this.series[8] = g[0].composicaoCabecaMachos2436(),
-          this.series[9] = g[0].composicaoCabecaMachos36()
+          this.series[2] = g.calculaPorcentagemVendasFemeas2436Abate(),
+          this.series[3] = g.calculaPorcentagemVendasFemeas2436(),
+          this.series[4] = g.calculaPorcentagemVendasFemeas1224Abate(),
+          this.series[5] = g.calculaPorcentagemVendasFemeas1224(),
+          this.series[6] = g.calculaPorcentagemVendasFemeas012(),
+          this.series[7] = g.calculaPorcentagemVendasMachos012(),
+          this.series[8] = g.calculaPorcentagemVendasMachos1224(),
+          this.series[9] = g.calculaPorcentagemVendasMachos1224Abate(),
+          this.series[10] = g.calculaPorcentagemVendasMachos2436(),
+          this.series[11] = g.calculaPorcentagemVendasMachos2436Abate(),
+          this.series[12] = g.calculaPorcentagemVendasMachos36(),
+          this.series[13] = g.calculaPorcentagemVendasMachos36Abate(),
+          this.series[14] = g.calculaPorcentagemVendasTouros(),
+          console.log(g)
+
 
 
           
@@ -89,6 +82,8 @@ BibliotecaDeCalculos.RebanhoTotal(
         )
         
       );
+     
+
      
 
     
