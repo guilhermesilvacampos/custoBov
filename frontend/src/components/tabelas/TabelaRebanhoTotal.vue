@@ -1,28 +1,70 @@
 <template>
-
-<v-data-table hide-actions :headers="headers7" :items="desserts7" class="elevation-1">
-            <template v-slot:items="props7">
-              <td>{{ props7.item.name }}</td>
-              <td class="text-xs-center">{{ props7.item.rebanhoTotalCabecasInicial }}</td>
-              <td class="text-xs-center">{{ props7.item.rebanhoTotalCabecasFinal }}</td>
-              <td class="text-xs-center">{{ props7.item.rebanhoTotalPesoVivoInicial }}</td>
-              <td class="text-xs-center">{{ props7.item.rebanhoTotalPesoVivoFinal }}</td>
-              <td class="text-xs-center">{{ props7.item.rebanhoTotalValorEstoqueGadoInicial }}</td>
-              <td class="text-xs-center">{{ props7.item.rebanhoTotalValorEstoqueGadoFinal }}</td>
-            </template>
-          </v-data-table>
-    
+  <v-layout v-resize="onResize" column class="lateral">
+    <v-data-table
+      hide-actions
+      :headers="headers7"
+      :items="desserts7"
+      class="elevation-1"
+      :hide-headers="isMobile"
+    >
+      <template v-slot:items="props7">
+        <tr v-if="!isMobile" class="elevation-1">
+          <td>{{ props7.item.name }}</td>
+          <td class="text-xs-center">{{ props7.item.rebanhoTotalCabecasInicial }}</td>
+          <td class="text-xs-center">{{ props7.item.rebanhoTotalCabecasFinal }}</td>
+          <td class="text-xs-center">{{ props7.item.rebanhoTotalPesoVivoInicial }}</td>
+          <td class="text-xs-center">{{ props7.item.rebanhoTotalPesoVivoFinal }}</td>
+          <td class="text-xs-center">{{ props7.item.rebanhoTotalValorEstoqueGadoInicial }}</td>
+          <td class="text-xs-center">{{ props7.item.rebanhoTotalValorEstoqueGadoFinal }}</td>
+        </tr>
+        <tr v-else style="border: solid 1px">
+          <td>
+            <ul class="titulo">
+              <li>{{props7.item.name}}</li>
+            </ul>
+            <ul class="flex-content">
+              <li class="flex-item" data-label="Cabeça Inicial">
+                {{props7.item.rebanhoTotalCabecasInicial}}
+                <hr>
+              </li>
+              <li class="flex-item" data-label="Cabeça Final">
+                {{props7.item.rebanhoTotalCabecasFinal}}
+                <hr>
+              </li>
+              <li class="flex-item" data-label="Peso vivo total Inicial (kg)">
+                {{props7.item.rebanhoTotalPesoVivoInicial}}
+                <hr>
+              </li>
+              <li class="flex-item" data-label="Peso vivo total Final (kg)">
+                {{props7.item.rebanhoTotalPesoVivoFinal}}
+                <hr>
+              </li>
+              <li class="flex-item" data-label="Valor estoque Inicial (R$)">
+                {{props7.item.rebanhoTotalValorEstoqueGadoInicial}}
+                <hr>
+              </li>
+              <li class="flex-item" data-label="Valor estoque FInal (R$)">
+                {{props7.item.rebanhoTotalValorEstoqueGadoFinal}}
+                <hr>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </template>
+    </v-data-table>
+  </v-layout>
 </template>
 
 <script>
 import Formulario from "../../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
+import estiloIsMobile from "../../../public/style/estiloIsMobile.css";
+
 export default {
-
-
-data: () => ({
+  data: () => ({
     formulario: "",
-headers7: [
+    isMobile: false,
+    headers7: [
       {
         text: "Rebanho Total",
         align: "left",
@@ -75,16 +117,17 @@ headers7: [
       },
       {
         name: "Diferença no Estoque Total de Gado(Final-Inicial)",
-
+        rebanhoTotalCabecasInicial: "-",
         rebanhoTotalCabecasFinal: "erro",
+        rebanhoTotalPesoVivoInicial: "-",
         rebanhoTotalPesoVivoFinal: "erro",
+        rebanhoTotalValorEstoqueGadoInicial: "-",
         rebanhoTotalValorEstoqueGadoFinal: "erro"
       }
-    ],
+    ]
+  }),
 
-}),
-
-beforeCreate() {
+  beforeCreate() {
     var db = new Dexie("simulacao");
     db.version(1).stores({
       simulacao: "id,formularioDB"
@@ -97,19 +140,13 @@ beforeCreate() {
         console.log(form);
         console.log(form.RebanhoDeRecria);
 
-        
-
-         
-         
-
         return BibliotecaDeCalculos.RebanhoTotal(
-            BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
-            BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria));
+          BibliotecaDeCalculos.RebanhoDeReproducao(form.RebanhoDeReproducao),
+          BibliotecaDeCalculos.RebanhoDeRecria(form.RebanhoDeRecria)
+        );
       })
       .then(
         g => (
-         
-         
           //rebanho Total
 
           (this.desserts7[0].rebanhoTotalCabecasInicial = g.totalCabecaInicial()),
@@ -123,40 +160,13 @@ beforeCreate() {
           (this.desserts7[1].rebanhoTotalValorEstoqueGadoFinal = g.diferencaValorTotal())
         )
       );
-}
-
-}
+  },
+  methods: {
+    onResize() {
+      if (window.innerWidth < 1490) {
+        this.isMobile = true;
+      } else this.isMobile = false;
+    }
+  }
+};
 </script>
-<style scoped>
-
-
-@media screen and (max-width: 991px) {
-  
-
-  .elevation-1 {
-    margin-top: 3%;
-    border: solid;
-    margin-left: 1%;
-    margin-right: 1%;
-    border-width: 1px;
-    border-color: #004f48;
-  }
-
-  
-}
-
-@media screen and (min-width: 992px) {
- 
-  .elevation-1 {
-    margin-top: 3%;
-    border: solid;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-width: 1px;
-
-    border-color: #004f48;
-  }
-}
-
-
-</style>

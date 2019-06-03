@@ -2130,6 +2130,40 @@
         </v-form>
       </v-content>
     </v-container>
+<!-- Botão de reduzir os painéis-->
+    <v-tooltip top>
+      <template v-slot:activator="{ on }">
+        <v-btn
+          v-on="on"
+          absolute
+          fab
+          transition="slide-y-reverse-transition"
+          right
+          dark
+          color="teal"
+          @click="none"
+          class="botaoNone"
+        >
+          <v-icon dark>keyboard_arrow_down</v-icon>
+        </v-btn>
+      </template>
+      <span>Fechar Painéis</span>
+    </v-tooltip>
+    <v-snackbar   v-model="snackbar" right  :timeout=4000 top >
+      {{ text }}
+      <v-btn
+        color="pink"
+        flat
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
+
+
+
+
+
   </v-formulario>
 </template>
 <script>
@@ -2150,7 +2184,9 @@ export default {
   data: () => ({
     formulario: new Formulario(),
     forme: "",
-    panel: [0, 0, 0, 0, 0, 0, 0,0]
+    snackbar: false,
+    panel: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    text: 'Todos os painéis estão fechados!'
   }),
 
   updated() {
@@ -2196,11 +2232,45 @@ export default {
     },
     clear() {
       this.formulario = new Formulario();
+    },
+    // Fecha todos os paineis
+    none() {
+      var verificaPanel = [1, 1, 1, 1, 1, 1, 1, 0, 1];
+      let flag = false;
+      //Verifica se todos os painéis estão fechados
+      for (let i = 0; i < this.panel.length; i++) {
+        if (verificaPanel[i] != this.panel[i]) {
+          flag = true;
+          break;
+        }
+      }
+
+      if (!flag) {
+        this.snackbar = true
+      } else {
+        this.panel = [1, 1, 1, 1, 1, 1, 1, 0, 1];
+        this.PanelGraficosRebanho.panel = [1];
+      }
     }
   }
 };
 </script>
 <style scoped>
+
+h2 {
+  color: #00695c;
+}
+
+.botaoNone {
+  border: solid black 1px;
+  position: fixed;
+  margin-bottom: 0;
+  z-index: 997;
+  bottom: 45px;
+  right: 24px;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
 @media screen and (max-width: 991px) {
   h2 {
     color: #00695c;

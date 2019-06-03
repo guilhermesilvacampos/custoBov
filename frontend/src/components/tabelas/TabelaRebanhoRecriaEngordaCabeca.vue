@@ -1,24 +1,47 @@
 <template>
-
-
-<v-data-table hide-actions :headers="headers6" :items="desserts6" class="elevation-1">
-            <template v-slot:items="props6">
-              <td>{{ props6.item.name }}</td>
-
-              <td class="text-xs-center">{{ props6.item.rebanhoRecriaCabecasInicial }}</td>
-              <td class="text-xs-center">{{ props6.item.rebanhoRecriaCabecasFinal }}</td>
-            </template>
-          </v-data-table>
-    
+  <v-layout v-resize="onResize" column class="lateral">
+    <v-data-table
+      hide-actions
+      :headers="headers6"
+      :items="desserts6"
+      class="elevation-1"
+      :hide-headers="isMobile"
+    >
+      <template v-slot:items="props6">
+        <tr v-if="!isMobile" class="elevation-1">
+          <td>{{ props6.item.name }}</td>
+          <td class="text-xs-center">{{ props6.item.rebanhoRecriaCabecasInicial }}</td>
+          <td class="text-xs-center">{{ props6.item.rebanhoRecriaCabecasFinal }}</td>
+        </tr>
+        <tr v-else style="border: solid 1px">
+          <td>
+            <ul class="titulo">
+              <li>{{props6.item.name}}</li>
+            </ul>
+            <ul class="flex-content">
+              <li class="flex-item" data-label="Cabeça Inicial">
+                {{props6.item.rebanhoRecriaCabecasInicial}}
+                <hr>
+              </li>
+              <li class="flex-item" data-label="Cabeça Final">
+                {{props6.item.rebanhoRecriaCabecasFinal}}
+                <hr>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </template>
+    </v-data-table>
+  </v-layout>
 </template>
-<script>import Formulario from "../../class/Formulario.js";
+<script>
+import Formulario from "../../class/Formulario.js";
 import BibliotecaDeCalculos from "bibliotecadecalculos";
+import estiloIsMobile from "../../../public/style/estiloIsMobile.css";
 export default {
-
-
-data: () => ({
+  data: () => ({
     formulario: "",
-
+    isMobile: false,
     headers6: [
       {
         text: "Rebanho de Recria/ Engorda",
@@ -47,12 +70,10 @@ data: () => ({
 
         rebanhoRecriaCabecasFinal: "erro"
       }
-    ],
+    ]
+  }),
 
-
-}),
-
-beforeCreate() {
+  beforeCreate() {
     var db = new Dexie("simulacao");
     db.version(1).stores({
       simulacao: "id,formularioDB"
@@ -80,44 +101,19 @@ beforeCreate() {
       })
       .then(
         g => (
-         
           (this.desserts6[0].rebanhoRecriaCabecasInicial = g[1].subtotalDeCabecasInicial()),
           (this.desserts6[0].rebanhoRecriaCabecasFinal = g[1].subtotalDeCabecasFinal())
         )
       );
-}
-    
-}
+  },
+  methods: {
+    onResize() {
+      if (window.innerWidth < 1490) {
+        this.isMobile = true;
+      } else this.isMobile = false;
+    }
+  }
+};
 </script>
 <style scoped>
-
-
-@media screen and (max-width: 991px) {
-  
-
-  .elevation-1 {
-    margin-top: 3%;
-    border: solid;
-    margin-left: 1%;
-    margin-right: 1%;
-    border-width: 1px;
-    border-color: #004f48;
-  }
-
-  
-}
-
-@media screen and (min-width: 992px) {
- 
-  .elevation-1 {
-    margin-top: 3%;
-    border: solid;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-width: 1px;
-
-    border-color: #004f48;
-  }
-}
-
 </style>
