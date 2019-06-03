@@ -8,10 +8,10 @@
 
         <v-container grid-list-md text-xs-center text-md-center>
         <v-layout row wrap>
-      <div  class="grafico1">
+      
         
-        <v-layout >
-<v-flex xs12 sm12 md12> 
+        <v-layout justify-center align-center>
+<v-flex xs12 sm12 md6> 
             <div class="divider2">
               <span>
                 <b>Composição da receita de venda de animais (R$)</b>
@@ -25,7 +25,7 @@
         </v-layout>
         
       
-      </div>
+     
         </v-layout>
         </v-container>
       

@@ -1,6 +1,8 @@
 <template>
   <v-formulario>
+    
     <v-container class="container" grid-list-md fluid>
+      <v-flex md8 >
       <v-content>
         <h1>Está Pronto Para Fazer Sua Simulação?</h1>
 
@@ -61,16 +63,18 @@
               <template v-slot:header>
                 <h2>Dados Do Rebanho de Reprodução</h2>
               </template>
-
-              <div class="divider2">
-                <span>
+<v-flex md8 text-xs-center >
+              
+                <span class="title">
                   <b>Touros</b>
                 </span>
-              </div>
+              
               <v-divider></v-divider>
-
+<br>
               <v-layout align-center justify-center row wrap>
-                <v-flex xs7 sm7 md2>
+                <v-flex xs4 sm4 md2 text-xs-center>
+                  <b>Peso</b>
+                  <v-divider></v-divider>
                   <v-text-field
                     name="touroPesoMedio"
                     type="number"
@@ -78,20 +82,23 @@
                     :error-messages="errors.collect('touroPesoMedio')"
                     data-vv-name="touroPesoMedio"
                     background-color="white"
-                    label="Peso kg/cab"
+                    label="kg/cab"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroPesoMedio"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                <v-flex xs6 sm6 md2>
+<v-flex text-xs-center md4>
+   <b>Cabeças</b>
+                  <v-divider></v-divider>
+                  <v-layout row wrap>
+                <v-flex xs3 sm6 md6>
                   <v-text-field
                     name="touroCabecaInicial"
                     type="number"
                     background-color="white"
-                    label="Cabeças-Inicial"
+                    label="Inicial"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroCabecaInicial"
                     v-validate="'required|max:8'"
@@ -102,12 +109,12 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md2>
+                <v-flex xs3 sm3 md6>
                   <v-text-field
                     name="touroCabecaFinal"
                     type="number"
                     background-color="white"
-                    label="Cabeças-Final"
+                    label="Final"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroCabecaFinal"
                     v-validate="'required|max:8'"
@@ -117,12 +124,16 @@
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-                <v-flex xs6 sm6 md2>
+                  </v-layout>
+</v-flex>
+                <v-flex xs4 sm4 md2 text-xs-center>
+                  <b>Valor</b>
+                  <v-divider></v-divider>
                   <v-text-field
                     name="touroValor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/@"
+                    label="R$/@"
                     box
                     v-model="formulario.RebanhoDeReproducao.touroValor"
                     v-validate="'required|max:8'"
@@ -134,15 +145,19 @@
                 </v-flex>
               </v-layout>
 
-              <div class="divider2">
-                <span>
+
+              
+                <span class="title">
                   <b>Vacas</b>
                 </span>
-              </div>
+              
               <v-divider></v-divider>
+              <br>
 
               <v-layout align-center justify-center row wrap>
-                <v-flex xs7 sm7 md2>
+                <v-flex xs4 sm4 md2 text-xs-center>
+                  <b>Peso</b>
+                  <v-divider></v-divider>
                   <v-text-field
                     name="vacaMatrizPesoMedio"
                     type="number"
@@ -150,20 +165,23 @@
                     :error-messages="errors.collect('vacaMatrizPesoMedio')"
                     data-vv-name="vacaMatrizPesoMedio"
                     background-color="white"
-                    label="Peso kg/cab"
+                    label="kg/cab"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizPesoMedio"
                     required
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
-
-                <v-flex xs6 sm6 md2>
+<v-flex text-xs-center md4>
+   <b>Cabeças</b>
+                  <v-divider></v-divider>
+                  <v-layout row wrap>
+                <v-flex xs3 sm3 md6>
                   <v-text-field
                     name="vacaMatrizCabecaInicial"
                     type="number"
                     background-color="white"
-                    label="Cabeças-Inicial"
+                    label="Inicial"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizCabecaInicial"
                     v-validate="'required|max:8'"
@@ -174,12 +192,12 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md2>
+                <v-flex xs3 sm3 md6>
                   <v-text-field
                     name="vacaMatrizCabecaFinal"
                     type="number"
                     background-color="white"
-                    label="Cabeças-Final"
+                    label="Final"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizCabecaFinal"
                     v-validate="'required|max:8'"
@@ -189,13 +207,17 @@
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
+                  </v-layout>
+                  </v-flex>
 
-                <v-flex xs6 sm6 md2>
+                <v-flex xs4 sm4 md2 text-xs-center>
+                  <b>Valor</b>
+                  <v-divider></v-divider>
                   <v-text-field
                     name="vacaMatrizValor"
                     type="number"
                     background-color="white"
-                    label="Valor R$/@"
+                    label="R$/@"
                     box
                     v-model="formulario.RebanhoDeReproducao.vacaMatrizValor"
                     v-validate="'required|max:8'"
@@ -205,7 +227,9 @@
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
+                
               </v-layout>
+              </v-flex>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
@@ -215,15 +239,19 @@
                 <h2>Dados Do Rebanho de Recria</h2>
               </template>
 
-              <div class="divider2">
-                <span>
-                  <b>Fêmeas + 36 meses</b>
+           <v-flex md8 text-xs-center >
+              
+                <span class="title">
+                  <b>Fêmeas +36 Meses</b>
                 </span>
-              </div>
+              
               <v-divider></v-divider>
-
-              <v-layout align-center justify-center row wrap>
-                <v-flex xs6 sm6 md2>
+<br>
+<v-flex text-xs-center md4>
+   <b>Peso(kg/cab)</b>
+                  <v-divider></v-divider>
+                  <v-layout row wrap>
+                <v-flex xs3 sm3 md6>
                   <v-text-field
                     name="femeas36PesoInicial"
                     type="number"
@@ -231,7 +259,7 @@
                     :error-messages="errors.collect('femeas36PesoInicial')"
                     data-vv-name="femeas36PesoInicial"
                     background-color="white"
-                    label="Peso(kg/cab)Inicial"
+                    label="Inicial"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36PesoInicial"
                     required
@@ -239,12 +267,12 @@
                   ></v-text-field>
                 </v-flex>
 
-                <v-flex xs6 sm6 md2>
+                <v-flex xs3 sm3 md6>
                   <v-text-field
                     name="femeas36PesoFinal"
                     type="number"
                     background-color="white"
-                    label="Peso(kg/cab)Final"
+                    label="Final"
                     box
                     v-model="formulario.RebanhoDeRecria.femeas36PesoFinal"
                     v-validate="'required|max:8'"
@@ -254,6 +282,8 @@
                     lazy-validation
                   ></v-text-field>
                 </v-flex>
+                  </v-layout>
+</v-flex>
 
                 <v-flex xs6 sm6 md2>
                   <v-text-field
@@ -303,13 +333,14 @@
                   ></v-text-field>
                 </v-flex>
               </v-layout>
-
+           </v-flex>
               <div class="divider2">
                 <span>
                   <b>Fêmeas 24-36 meses</b>
                 </span>
               </div>
               <v-divider></v-divider>
+
 
               <v-layout align-center justify-center row wrap>
                 <v-flex xs6 sm6 md2>
@@ -2129,7 +2160,9 @@
           <panel-graficos-receita id="graficos_das_receitas"/>
         </v-form>
       </v-content>
+      </v-flex>
     </v-container>
+    
 <!-- Botão de reduzir os painéis-->
     <v-tooltip top>
       <template v-slot:activator="{ on }">
